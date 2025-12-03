@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --white: #ffffff;
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--white);
+    line-height: 1.6;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sección de encabezado */
+.header {
+    background-color: var(--white);
+    color: var(--guinda);
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: var(--guinda);
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px; 
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto; 
+}
+        
+h2{
+    font-family: "Oswald", sans-serif;
+}
+
+h4{
+    font-family: "Oswald", sans-serif;
+}
+                
+/* Sección de características */
+.features-section {
+    background-color: var(--guinda-claro);
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.feature-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 30px;
+    color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+}
+
+.feature-box p {
+    margin-bottom: 10px;
+}
+
+.extraordinario {
+    background-color: var(--guinda-principal);
+}
+
+.recurso-intersemestral {
+    background-color: var(--guinda-principal);
+}
+
+/* Sección de procedimientos */
+.procedure-section {
+    padding: 60px 0;
+    width: 100%;
+}
+
+.extraordinario-procedure {
+    background-color: var(--guinda);
+    color: var(--white);
+}
+
+.recurso-procedure {
+    background-color: var(--guinda-principal);
+    color: var(--white);
+}
+
+.procedure-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.procedure-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.procedure-text {
+    flex: 1;
+}
+
+.procedure-image,
+.procedure-image-2 {
+    flex: 0 0 auto;
+    object-fit: cover; 
+    object-position: 50% 70%;
+    width: 500px; 
+    height: 400px; 
+    text-align: center;
+    margin-left: 2rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.procedure-image-2 {
+    object-position: 50% 0%;
+}
+
+
+.procedure-image img {
+    max-width: 100%;
+    height:auto;
+
+}
+
+.procedure-section ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.procedure-section li {
+    margin-bottom: 10px;
+}
+
+.procedure-section ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Sección de notas */
+.notes-section {
+    background-color: var(--guinda-oscuro);
+    padding: 60px 0;
+}
+
+.note-box {
+    background-color: var(--guinda-claro);
+    color: var(--white);
+    padding: 25px 30px 25px 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--white);
+    text-align: left;
+}
+
+.note-box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+}
+
+.note-box p {
+    text-align: left;
+}
+
+/* Estilos para animaciones */
+.seccion {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.seccion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imagen-seccion {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.imagen-seccion.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lista-animada li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.lista-animada li.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nota-destacada {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.nota-destacada.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+            
+    .section-title {
+        font-size: 1.5rem;
+    }
+            
+    .feature-box {
+        min-width: 100%;
+    }
+            
+    .procedure-title {
+        font-size: 1.5rem;
+    }
+            
+    .procedure-content {
+        flex-direction: column;
+    }
+
+    .procedure-image, .procedure-image-2 {
+        width: 80% !important;
+        max-width: 500px !important;
+        margin: 20px auto !important;
+        height: auto !important;
+        flex: none !important;
+    }
+    
+    .procedure-content {
+        align-items: center !important;
+    }
+    
+    .recurso-procedure .procedure-content {
+        flex-direction: column !important;
+    }
+    
+    .recurso-procedure .procedure-image-2 {
+        order: -1 !important;
+        margin-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 30px 0;
+    }
+            
+    .header h1 {
+        font-size: 1.8rem;
+    }
+            
+    .features-section, .procedure-section, .notes-section {
+        padding: 40px 0;
+    }
+            
+    .section-title, .procedure-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+            
+    .feature-box {
+        padding: 20px;
+    }
+            
+    .feature-box h3 {
+        font-size: 1.3rem;
+    }
+            
+    .procedure-content {
+        gap: 20px;
+    }
+            
+    .note-box {
+        padding: 20px 25px 20px 30px;
+    }
+            
+    .note-box h4 {
+        font-size: 1.2rem;
+    }
+            
+    .container {
+        padding: 0 15px;
+    }
+
+    .procedure-image, .procedure-image-2 {
+        width: 100% !important; 
+        max-width: 320px !important; 
+        height: auto !important; 
+        margin: 0 auto !important; 
+        flex: none !important; 
+        object-fit: contain !important;
+    }
+    
+    .procedure-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+    }
+    
+    .procedure-content {
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+    
+    .extraordinario-procedure .procedure-content,
+    .recurso-procedure .procedure-content {
+        flex-direction: column !important;
+    }
+    
+    .recurso-procedure .procedure-content {
+        flex-direction: column !important;
+    }
+    
+    .recurso-procedure .procedure-image-2 {
+        order: -1; 
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .procedure-image,
+    .procedure-image-2 {
+        width: 450px; 
+        height: 350px;
+    }
+    
+    .procedure-content {
+        gap: 25px;
+    }
+}

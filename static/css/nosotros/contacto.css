@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Fredoka:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --white: hsl(0, 0%, 100%);
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+body {
+      background-color: var(--white);
+      color: var(--guinda-principal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Bebas Neue", sans-serif;
+}
+
+.main-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+.contacto-section {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px 20px 60px 20px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--guinda); 
+    text-align: center;
+    margin: 40px 0 20px 0; /* CORRECCIÓN: Agregar margen superior e inferior */
+    font-size: 3rem; 
+    letter-spacing: 2px;
+    animation: slideDown 0.8s ease-out; 
+    width: 100%; /* Asegurar que ocupe todo el ancho */
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px; /* Mismo ancho que quieres para la línea */
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto; /* Centra la línea */
+}
+
+/* ... (el resto del CSS se mantiene igual) ... */
+
+.contacto-cont {
+    width: 100%;
+    max-width: 330px;
+    height: 420px;
+}
+
+.contacto-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+}
+
+.contacto-cont.flipped .contacto-card {
+      transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+}
+
+.card-front {
+      background-color: var(--guinda-principal);
+}
+
+.card-back {
+      background: linear-gradient(135deg, var(--guinda-principal), var(--guinda-oscuro));
+      transform: rotateY(180deg);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+      font-family: 'Oswald', sans-serif; /* TEXTO NORMAL */
+}
+
+.imagen-contacto {
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+}
+
+.contenido-frontal {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
+      gap: 25px;
+}
+
+.card-front h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--white);
+      text-align: center;
+      margin: 0;
+      font-family: "Oswald", sans-serif;
+}
+
+.btn-contacto {
+      background-color: var(--white);
+      color: var(--guinda-principal);
+      border: none;
+      padding: 14px 35px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 800;
+}
+
+.btn-contacto:hover {
+      background-color: var(--guinda-oscuro);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.info-contacto {
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-weight: 500;
+      font-family: 'Fredoka', sans-serif; /* TEXTO NORMAL */
+}
+
+/* Sección directorio */
+.directorio-section {
+    width: 100vw;
+    background: var(--guinda-oscuro);
+    padding: 80px 20px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.directorio-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.directorio-titulo {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--white);
+      position: relative;
+      font-weight: 700;
+}
+
+.directorio-titulo::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background-color: var(--guinda-principal);
+}
+
+.directorio-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+}
+
+.departamento-item {
+    background-color: rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.departamento-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      background-color: rgba(255, 255, 255, 0.12);
+}
+
+.departamento-header {
+        padding: 20px 25px;
+        background-color: var(--guinda-principal);
+        cursor: pointer;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+}
+
+.departamento-header:hover {
+      background-color: #8a1d3a;
+}
+
+.departamento-nombre {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin: 0;
+      font-family: "Oswald", sans-serif;
+}
+
+.departamento-icono {
+      color: var(--white);
+      transition: transform 0.4s ease;
+      font-size: 16px;
+      font-weight: bold;
+}
+
+.departamento-item.active .departamento-icono {
+      transform: rotate(180deg);
+}
+
+.departamento-correos {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+    padding: 0 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    background-color: var(--guinda-claro);
+    font-family: 'Fredoka', sans-serif; /* TEXTO NORMAL */
+}
+
+.departamento-item.active .departamento-correos {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.correo-item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Fredoka', sans-serif; /* TEXTO NORMAL */
+}
+
+.correo-item:last-child {
+      border-bottom: none;
+}
+
+.correo-item:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+}
+
+.correo-link {
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.3s ease;
+      font-size: 16px;
+      word-break: break-all;
+      font-family: 'Fredoka', sans-serif; /* TEXTO NORMAL */
+}
+
+.correo-link:hover {
+      color: var(--white);
+}
+
+.correo-icono {
+      font-size: 20px;
+      flex-shrink: 0;
+}
+
+/* DESKTOP */
+@media (min-width: 1200px) {
+    .contacto-cont {
+        max-width: 320px;
+    }
+
+    .directorio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* TABLETS */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .directorio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* CELULARES */
+@media (max-width: 767px) {
+    .directorio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .directorio-section {
+        padding: 40px 10px;
+    }
+    
+    /* CORRECCIÓN ADICIONAL PARA MÓVILES */
+    h1 {
+        margin: 20px 0 30px 0;
+        font-size: 2.5rem;
+    }
+}

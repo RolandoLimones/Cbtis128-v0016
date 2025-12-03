@@ -1,0 +1,91 @@
+/* IMPORTAR FUENTES DE GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Fredoka:wght@300..700&display=swap');
+
+/* Paleta de colores */
+:root {
+    --primary: #a22245;
+    --secondary: #792D42;
+    --tertiary: #4E2A34;
+    --quaternary: #332428;
+    --white: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--quaternary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 55px; */
+    font-family: 'Fredoka', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', sans-serif;
+}
+
+/* Fondo difuminado */
+.background {
+    position: fixed;
+    inset: 0;
+    background: url('../images/fondo.png') no-repeat center center / cover;
+    filter: blur(1px);
+    z-index: -1;
+    opacity: 0.8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.8; }
+}
+
+/* ❌ Se elimina el bloque invisible que creaba espacio arriba
+body::before {
+    content: '';
+    display: block;
+    height: 70px;
+}
+*/
+
+/* Animaciones */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #ffffff, #f8f8f8);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B0000, #800020, #722F37);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #722F37, #8B0000, #660000);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #660000, #722F37);
+}
+
+::-webkit-scrollbar-corner {
+    background: #a31919;
+}

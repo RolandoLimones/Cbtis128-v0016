@@ -1,0 +1,959 @@
+/* Paleta de colores */
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --primary: #a22245;
+    --secondary: #792D42;
+    --tertiary: #4E2A34;
+    --quaternary: #332428;
+    --white: #ffffff;
+}
+/*  */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--quaternary);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fondo difuminado */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/fondo.png') no-repeat center center / cover;
+    filter: blur(1px);
+    z-index: -1;
+    opacity: 0.8;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.8; }
+}
+
+/* BARRA DE NAVEGACIÓN PRINCIPAL - MEJORADA */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--primary) 0%, var(--secondary) 100%);
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    padding: 8px 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    gap: 15px;
+    max-height: 105px;
+}
+
+/* Espacio para el contenido (reemplaza el main) */
+body::before {
+    content: '';
+    display: block;
+    height: 70px; /* Misma altura que tu navbar */
+}
+
+.hamburger:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* LOGO - CON TAMAÑOS ESPECÍFICOS */
+.logo {
+    font-family: 'Bebas Neue', 'Geneva', sans-serif;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-size: 2.9rem; /* Tamaño específico solicitado */
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    z-index: 1003;
+    white-space: nowrap;
+    min-width: 0; /* Permite que se reduzca si es necesario */
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    height: 95px; /* Altura específica solicitada */
+    margin-right: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* MENÚ PRINCIPAL - ALINEADO A LA DERECHA */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-self: end; /* Cambiado de center a end para alinear a la derecha */
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Empuja el menú hacia la derecha */
+}
+
+/* Cuando la búsqueda está activa, ocultar el menú */
+.menu.hidden {
+    display: none;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 12px;
+}
+
+.menu li a {
+    font-family: 'Fredoka', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 8px 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 4px;
+    position: relative;
+    display: block;
+    white-space: nowrap;
+}
+
+
+/* Línea decorativa bajo enlaces principales */
+.menu > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu > li:hover > a {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu > li:hover > a::after {
+    width: 100%;
+    left: 0;
+}
+
+/* SUBMENÚS - PRIMER NIVEL - ALINEADOS A LA IZQUIERDA */
+.menu li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; /* Cambiado de right: 0 a left: 0 para alinear a la izquierda */
+    background: var(--secondary);
+    list-style: none;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+    animation: slideDown 0.3s ease;
+    z-index: 1001;
+}
+
+.menu li:hover > ul {
+    display: block;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SUBMENÚS - SEGUNDO NIVEL - ALINEADOS A LA DERECHA DEL SUBMENÚ PADRE */
+.menu li ul li > ul {
+    display: none;
+    position: absolute;
+    left: 100%; /* Cambiado de right: 100% a left: 100% para alinear a la derecha */
+    top: 0;
+    background: var(--tertiary);
+    list-style: none;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+    animation: slideRight 0.3s ease; /* Cambiada animación */
+    z-index: 1002;
+}
+
+.menu li ul li:hover > ul {
+    display: block;
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ITEMS DE SUBMENÚ */
+.menu li ul li {
+    margin: 4px 0;
+    position: relative;
+}
+
+.menu li ul li a {
+    padding: 6px 10px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: block;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: pointer !important;
+}
+
+.menu li:has(ul) > a {
+    cursor: default !important;
+}
+
+.menu li > a[href]:not([href=""]):not([href^="javascript:"]),
+.menu li > a[href*="/"] {
+    cursor: pointer;
+}
+
+/* Línea decorativa lateral en submenús - AHORA EN EL LADO IZQUIERDO */
+.menu li ul li a::before {
+    content: '';
+    position: absolute;
+    left: 0; /* Cambiado de right: 0 a left: 0 */
+    top: 50%;
+    width: 2px;
+    height: 0;
+    background: var(--white);
+    transition: height 0.3s ease, top 0.3s ease;
+}
+
+.menu li ul li:hover > a {
+    transform: translateX(4px); /* Cambiado de -4px a 4px */
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu li ul li:hover > a::before {
+    height: 100%;
+    top: 0;
+}
+
+/* CONTENEDOR DE BÚSQUEDA - MEJORADO */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    justify-self: end;
+}
+
+/* Cuando se expande la búsqueda en DESKTOP - MEJORADO */
+.search-container.expanded {
+    grid-column: 1 / -1; /* Ocupa toda la fila */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1001;   
+    margin-top:-25px;
+    position:relative;
+}
+
+/* BÚSQUEDA */
+.search-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1002;
+    padding: 0 5px 5px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon img {
+    width: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.search-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Cuando la búsqueda está activa, ocultar el ícono de búsqueda */
+.search-container.expanded .search-icon {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* BARRA DE BÚSQUEDA - MEJORADA */
+.search-bar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    border-radius: 20px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    width: 220px;
+}
+
+/* Barra de búsqueda expandida en DESKTOP */
+.search-container.expanded .search-bar {
+    width: 100%; /* Ocupa todo el ancho del contenedor expandido */
+    position: absolute;
+    top: -200%;
+    transform: none;
+}
+
+.search-bar.active {
+    display: flex;
+    align-items: center;
+    animation: slideInSearch 0.3s ease;
+    
+}
+
+@keyframes slideInSearch {
+    from {
+        opacity: 0;
+        transform: translateX(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 15px;
+    background: transparent;
+    font-size: 0.85rem;
+    outline: none;
+    color: var(--quaternary);
+    width: 100%;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Botón para cerrar búsqueda */
+.close-search {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 3px;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+    line-height: 1;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.close-search:hover {
+    transform: scale(1.2);
+    color: var(--secondary);
+}
+
+.hamburger {
+    transition: transform 0.3s ease;
+}
+
+
+/* MENÚ HAMBURGUESA (oculto por defecto, visible desde 1380px hacia abajo) */
+.hamburger {
+    display: none; /* Oculto por defecto */
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.3rem;
+    z-index: 1002;
+    padding: 9px;
+    justify-self: end;
+}
+
+/* LOGOS INSTITUCIONALES */
+.logo-dgeti img {
+    height: 65px;
+    width: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.logo-sep img {
+    height: 50px;
+    max-width: 190px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* ============================================= */
+/* NUEVO BREAKPOINT: 1380px HACIA ABAJO */
+/* ============================================= */
+@media (max-width: 1410px) {
+    .search-icon {
+    padding: 0 0 5px 5px;
+}
+    .search-results {
+        position: static;
+        right: 17px !important;
+        width: 100%;
+        margin-top:  90px !important;
+    }
+    nav{
+        max-height: 100px;
+    }
+    .hamburger {
+        display: block; /* Mostrar hamburguesa */
+        font-size: 1.6rem;
+        color: var(--white);
+        cursor: pointer;
+        z-index: 1003; 
+        position: fixed;
+    }
+    
+    .menu {
+        display: none; /* Ocultar menú normal */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 70%;
+        max-width: 300px;
+        background: var(--secondary);
+        border-radius: 0 0 8px 8px;
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1005;
+        transform: scaleY(0);
+        transform-origin: top;
+        justify-self: stretch;
+    }
+    
+    .menu.active {
+        display: flex;
+        transform: scaleY(1);
+    }
+    
+    /* Ajustes de tamaño para este breakpoint */
+    .logo {
+        font-size: 2.6rem;
+    }
+    
+    .logo img {
+        height: 90px;
+    }
+    
+    /* ITEMS DEL MENÚ */
+    .menu li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .menu li a {
+        padding: 12px 18px;
+    }
+    
+    /* SUBMENÚS - CORREGIDOS */
+/* SUBMENÚS - MEJORADOS CON ANIMACIONES AVANZADAS */
+.menu li > ul {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    width: auto;
+    min-width: 200px;
+    background: var(--secondary);
+    padding: 8px 0;
+    border-left: 3px solid rgba(255,255,255,0.2);
+    position: absolute;
+    left: -200px;
+    top: -15%;
+    border-radius: 8px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(-15px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.menu li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    max-height: 400px;
+    transition-delay: 0.1s;
+}
+
+.menu li ul.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+    max-height: 400px;
+}
+
+.menu li ul li a {
+    padding: 10px 20px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu li ul li a:hover {
+    background: rgba(255, 255, 255, 0.267);
+    transform: translateY(-2px);
+}
+
+.menu li ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+}
+
+.menu li ul li a:hover::before {
+    width: 3px;
+}
+
+.menu li ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu li ul li a:hover::after {
+    width: 100%;
+}
+
+.menu li ul li ul {
+    left: -100%;
+    top: 0;
+    transform: translateX(-15px) scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu li ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+/* Posicionamiento relativo para los items que tienen submenús */
+.menu li {
+    position: relative;
+}
+    /* Barra de búsqueda expandida */
+    .search-container.expanded {
+        grid-column: 1 / -1;
+        margin: 0 auto;
+        width: 850px;
+        margin-top:-125px ;
+        max-width: none;
+    }
+    
+    .search-container.expanded .search-bar {
+        display: flex;
+        width: 100%;
+        position: static;
+        transform: none;
+        margin: 0 5px;
+    }
+    
+    .search-bar input {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .close-search {
+        font-size: 1.2rem;
+    }
+    
+    /* Ocultar título cuando búsqueda abierta */
+    nav:has(.search-container.expanded) .logo span {
+        display: none;
+    }
+
+}
+
+/* Para pantallas más pequeñas dentro del rango 1380px */
+@media (max-width: 992px) {
+    .search-icon {
+    padding: 0 15px 5px 5px;
+    }
+    .search-container.expanded {
+        width: 500px;
+        margin-top: -90px;
+    }
+    .search-results {
+        position: static;
+        right: 17px !important;
+        max-width: 430px;
+        margin-top:  90px !important;
+    }
+    nav{
+        max-height: 100px;
+    }
+    nav {
+        grid-template-columns: auto 1fr auto auto;
+        padding: 8px 10px;
+        gap: 10px;
+        max-height: 105px;
+    }
+    
+    /* Ajustes adicionales para tablets */
+    .logo {
+        font-size: 2.4rem;
+    }
+    
+    .logo img {
+        height: 80px;
+    }
+    nav{
+        max-height:95px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+/* ============================================= */
+/* RESPONSIVE PARA BARRA DE BÚSQUEDA - 480px HACIA ABAJO */
+/* ============================================= */
+
+@media (max-width: 480px) {
+        .menu {
+        display: none; /* Ocultar menú normal */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 46%;
+        max-width: 300px;
+        background: var(--secondary);
+        border-radius: 0 0 8px 8px;
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1005;
+        transform: scaleY(0);
+        transform-origin: top;
+        justify-self: stretch;
+    }
+    /* CONTENEDOR DE BÚSQUEDA EXPANDIDO EN MÓVIL */
+    .logo {
+        font-size: 2.2rem;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .search-container.expanded {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: -70px;
+        padding: 0 10px;
+        position: relative;
+        z-index: 1001;
+    }
+    
+    /* BARRA DE BÚSQUEDA EN MÓVIL */
+    .search-container.expanded .search-bar {
+        width: 100%;
+        position: static;
+        transform: none;
+        margin: 0;
+        padding: 8px 12px;
+        border-radius: 25px;
+    }
+    
+    .search-bar input {
+        padding: 8px 12px;
+        font-size: 16px; /* Mejor para UX en móvil */
+        width: 100%;
+    }
+    
+    /* BOTÓN CERRAR EN MÓVIL */
+    .close-search {
+        width: 24px;
+        height: 24px;
+        font-size: 1.1rem;
+        margin-left: 8px;
+        flex-shrink: 0;
+    }
+    
+    /* RESULTADOS DE BÚSQUEDA EN MÓVIL */
+    .search-results {
+        position: fixed;
+        top: 70px !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        max-height: 60vh;
+        margin-top: 0 !important;
+        z-index: 1004;
+    }
+    
+    /* ITEMS DE RESULTADOS EN MÓVIL */
+    .search-result-item {
+        padding: 14px 16px;
+    }
+    
+    .result-title {
+        font-size: 0.9rem;
+    }
+    
+    .result-snippet {
+        font-size: 0.8rem;
+    }
+    
+    /* OCULTAR ELEMENTOS CUANDO BÚSQUEDA ACTIVA EN MÓVIL */
+    nav:has(.search-container.expanded) .logo span,
+    nav:has(.search-container.expanded) .hamburger,
+    nav:has(.search-container.expanded) .logo-dgeti,
+    nav:has(.search-container.expanded) .logo-sep {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    /* MENÚ HAMBURGUESA CUANDO BÚSQUEDA ACTIVA */
+    nav:has(.search-container.expanded) .hamburger {
+        display: none;
+    }
+    
+    /* LOGO MÍNIMO CUANDO BÚSQUEDA ACTIVA */
+    nav:has(.search-container.expanded) .logo {
+        min-width: auto;
+    }
+    
+    /* AJUSTES ADICIONALES PARA MÓVILES PEQUEÑOS */
+    @media (max-width: 380px) {
+        .search-container.expanded {
+            margin-top: -85px;
+            padding: 0 8px;
+        }
+        
+        .search-container.expanded .search-bar {
+            padding: 6px 10px;
+        }
+        
+        .search-bar input {
+            padding: 6px 10px;
+            font-size: 15px;
+        }
+        
+        .search-results {
+            left: 8px !important;
+            right: 8px !important;
+        }
+    }
+    
+    /* PARA MÓVILES EN ORIENTACIÓN HORIZONTAL */
+    @media (max-width: 480px) and (max-height: 400px) {
+        .search-results {
+            max-height: 50vh;
+        }
+    }
+}
+
+/* ============================================= */
+/* AJUSTES PARA TABLETS PEQUEÑAS (481px - 768px) */
+/* ============================================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .search-container.expanded {
+        margin-top: -100px;
+        max-width: 340px;
+    }
+    .menu li > ul {
+    min-width: 100px;
+    width: 180px;
+    left: -180px;
+    }
+    .search-icon {
+    padding: 0 12px 5px 5px;
+}
+    nav{
+        max-height: 90px;
+    }
+    .search-results {
+        max-width: 290px;
+        left: 12%;
+        margin-top: 93px !important;
+    }
+}
+/*CODIGO EXCKUSIVO PARA LOS RESULTADOS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Contenedor de resultados de búsqueda */
+.search-results {
+    display: none;
+    position: absolute;
+    top: -80%;
+    right: 0.5%;
+    width: 790px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1003;
+    margin-top: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.2s ease-out;
+}
+
+.search-results.show {
+    display: block;
+}
+
+/* Items de resultados */
+.search-result-item {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--quaternary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.search-result-item:hover {
+    background: rgba(162, 34, 69, 0.05);
+    transform: translateX(2px);
+    text-decoration: none;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.result-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+.result-title i {
+    margin-right: 5px;
+    font-size: 1.1rem;
+    color: var(--secondary);
+}
+
+.result-snippet {
+    font-size: 0.82rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.result-url {
+    font-size: 0.75rem;
+    color: #888;
+    font-family: monospace;
+}
+
+/* Sin resultados */
+.no-results {
+    padding: 25px 20px;
+    text-align: center;
+    color: #666;
+}
+
+.no-results i {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+    color: #ddd;
+}
+
+.no-results p {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+}
+
+.no-results small {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Contador de resultados */
+.results-count {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    text-align: center;
+}
+
+/* Scrollbar personalizado para resultados */
+.search-results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: #f8f8f8;
+    border-radius: 0 8px 8px 0;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* Efecto de carga */
+.search-results.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.search-results.loading::after {
+    content: "Buscando...";
+    display: block;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Momo+Trust+Display&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Fredoka:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* --- Variables de Color --- */
+:root {
+    --white: hsl(0, 0%, 100%);
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+    --sombra-sutil: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más visible */
+}
+
+/* --- Animación para el Título --- */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Estilos Generales y Layout --- */
+body {
+    background-color: var(--white);
+    color: var(--guinda-principal);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Mulish', sans-serif;
+}
+
+#main {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 100%;
+    /* CAMBIO CLAVE 1: Eliminamos la restricción de ancho máximo y padding para quitar el espacio en blanco exterior */
+    max-width: 100%; 
+    padding: 0; /* Espacio en blanco eliminado */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* --- Estilos del Título (H1) --- */
+.apartados__titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--guinda-principal); 
+    text-align: center;
+    margin: 40px 0 30px 0;
+    font-size: 3.5rem; 
+    letter-spacing: 2px;
+    animation: slideDown 0.8s ease-out; 
+    width: 100%;
+    /* Añadimos padding aquí si el título toca el borde */
+    padding: 0 20px;
+}
+
+.apartados__titulo::after {
+    content: "";
+    display: block;
+    width: 100px; 
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto; 
+}
+
+
+.revista__contenedor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgb(243, 243, 243);
+    padding: 2rem 3%;
+} 
+.revista__parrafo {
+    text-align: center;
+    color: var(--negro);
+    font-weight: bold;
+    text-align: justify;
+}
+
+/* --- Adaptabilidad (Responsive) --- */
+
+/* Tablet y Escritorio pequeño (1024px o menos) */
+@media (max-width: 1024px) {
+    /* Mantenemos el contenedor estirado */
+    .revista__contenedor {
+        width: 100%; 
+        max-width: 100%; 
+        min-height: 400px; 
+    }
+    .revista__contenedor iframe {
+        /* Altura adaptada */
+        height: 350px; 
+    }
+}
+
+/* Móvil (768px o menos) */
+@media (max-width: 768px) {
+    .apartados__titulo {
+        font-size: 2.5rem;
+        margin: 20px 0 25px 0;
+        padding: 0 10px; /* Aseguramos padding en móvil */
+    }
+
+    .revista__contenedor {
+        width: 100%;
+        max-width: none;
+        padding-bottom: 20px;
+        min-height: 300px; 
+    }
+
+    .revista__contenedor iframe {
+        /* Altura adecuada para móvil */
+        height: 300px; 
+        border-width: 2px;
+    }
+}

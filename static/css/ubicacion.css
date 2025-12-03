@@ -1,0 +1,464 @@
+/* ubicacion.css */
+/* Estilos específicos para la página de Ubicación */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --white: #ffffff;
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    animation: fadeIn 0.8s ease;
+}
+
+/* Título principal */
+.contenedor-principal h2 {
+    font-family: "Bebas Neue", sans-serif;
+    margin-top: 30px;
+    color: var(--guinda);
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.contenedor-principal h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--guinda), var(--guinda-principal));
+    border-radius: 2px;
+}
+
+/* Secciones generales */
+.seccion-blanca,
+.seccion-roja,
+.seccion-gris {
+    border-radius: 12px;
+    padding: 35px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-blanca:hover,
+.seccion-roja:hover,
+.seccion-gris:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección blanca */
+.seccion-blanca {
+    background: var(--white);
+    border-left: 5px solid var(--guinda);
+}
+
+.seccion-blanca::before {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    opacity: 0.1;
+}
+
+/* Sección roja */
+.seccion-roja {
+    background: linear-gradient(135deg, var(--guinda), var(--guinda-principal));
+    color: var(--white);
+    border-left: 5px solid var(--white);
+}
+
+.seccion-roja::before {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    opacity: 0.2;
+}
+
+/* Sección gris */
+.seccion-gris {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-left: 5px solid var(--guinda-oscuro);
+}
+
+.seccion-gris::before {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    opacity: 0.1;
+}
+
+/* Títulos de sección */
+.seccion-blanca h3,
+.seccion-roja h3,
+.seccion-gris h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.seccion-blanca h3 {
+    color: var(--guinda);
+}
+
+.seccion-roja h3 {
+    color: var(--white);
+}
+
+.seccion-gris h3 {
+    color: var(--guinda-oscuro);
+}
+
+/* Párrafos */
+.seccion-blanca p,
+.seccion-roja p,
+.seccion-gris p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.seccion-blanca p {
+    color: var(--guinda-oscuro);
+}
+
+.seccion-roja p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.seccion-gris p {
+    color: var(--guinda-oscuro);
+}
+
+/* Enlace de tour */
+.tour-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--guinda), var(--guinda-principal));
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(162, 34, 69, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.tour-link::before {
+    content: '🚀';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.tour-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(162, 34, 69, 0.4);
+}
+
+.tour-link:hover::before {
+    transform: scale(1.2);
+}
+
+.tour-link:active {
+    transform: translateY(0);
+}
+
+/* Contenedor del mapa */
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.map-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.map-container iframe {
+    display: block;
+    border: none;
+}
+
+/* Efecto de carga para el mapa */
+.map-container::after {
+    content: 'Cargando mapa...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--guinda);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.map-container.loaded::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Imagen del croquis */
+.croquis-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.croquis-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Modal para el croquis (funcionalidad adicional) */
+.croquis-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.croquis-modal.active {
+    display: flex;
+}
+
+.croquis-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+}
+
+/* Indicadores de estado */
+.loading-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--white);
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Efectos de entrada para las secciones */
+.seccion-blanca,
+.seccion-roja,
+.seccion-gris {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sectionSlideIn 0.6s ease forwards;
+}
+
+.seccion-blanca {
+    animation-delay: 0.1s;
+}
+
+.seccion-roja {
+    animation-delay: 0.2s;
+}
+
+.seccion-gris {
+    animation-delay: 0.3s;
+}
+
+@keyframes sectionSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+    
+    .contenedor-principal h2 {
+        font-size: 2.4rem;
+    }
+    
+    .seccion-blanca,
+    .seccion-roja,
+    .seccion-gris {
+        padding: 25px 20px;
+        margin-bottom: 25px;
+    }
+    
+    .seccion-blanca h3,
+    .seccion-roja h3,
+    .seccion-gris h3 {
+        font-size: 1.6rem;
+    }
+    
+    .tour-link {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-principal h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .seccion-blanca,
+    .seccion-roja,
+    .seccion-gris {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .seccion-blanca h3,
+    .seccion-roja h3,
+    .seccion-gris h3 {
+        font-size: 1.4rem;
+    }
+    
+    .seccion-blanca p,
+    .seccion-roja p,
+    .seccion-gris p {
+        font-size: 1rem;
+    }
+    
+    .tour-link {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 15px 10px;
+    }
+    
+    .contenedor-principal h2 {
+        font-size: 2rem;
+    }
+    
+    .seccion-blanca,
+    .seccion-roja,
+    .seccion-gris {
+        padding: 15px 12px;
+    }
+    
+    .seccion-blanca::before,
+    .seccion-roja::before,
+    .seccion-gris::before {
+        font-size: 2rem;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .tour-link {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .map-container iframe {
+        height: 200px;
+    }
+}
+
+/* Mejoras de accesibilidad */
+.tour-link:focus,
+.croquis-img:focus {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Estados de carga mejorados */
+.seccion-blanca.loading::after,
+.seccion-roja.loading::after,
+.seccion-gris.loading::after {
+    content: 'Cargando...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    z-index: 10;
+}

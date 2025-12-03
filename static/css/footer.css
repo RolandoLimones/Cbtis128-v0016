@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;400;700&family=Mulish:wght@200;400;600&display=swap');
+
+
+:root {
+    --primary: #a22245;
+    --secondary: #792D42;
+    --tertiary: #4E2A34;
+    --quaternary: #332428;
+    --white: #ffffff;
+}
+
+
+/* === FOOTER === */
+footer {
+    background: var(--tertiary);
+    color: var(--white);
+    padding: 40px 0 0;
+    margin-top: auto;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    font-family: "Jost", sans-serif !important;
+}
+
+/* === FILA DE LOGOS - SIEMPRE JUNTOS, MISMA ALTURA === */
+.footer-logos-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 15px;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 500px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+/* DGETI - casi cuadrada */
+.logo-dgeti img {
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* SEP - rectangular */
+.logo-sep img {
+    height: 200px;
+    max-width: 190px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* === COLUMNAS DE TEXTO === */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    margin: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-col p,
+.footer-col a {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 4px 0;
+    word-break: break-word;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+/* === COPYRIGHT === */
+.copyright {
+    background: var(--quaternary);
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 992px) {
+    .footer-content {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    .footer-col {
+        margin-right: 0;
+        margin-bottom: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+    .footer-logo {
+        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .footer-logo img {
+        height: 50px;
+    }
+    .copyright {
+        margin-top: 10px;
+        padding: 15px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* FOOTER MÁS COMPACTO */
+    .footer-logos-row {
+        gap: 10px;
+    }
+
+    .footer-logo {
+        max-width: 100%;
+    }
+
+    .logo-dgeti img {
+        height: 150px !important;
+        width: 150px !important;
+    }
+    
+    .logo-sep img {
+        height: 100px !important;
+        max-width: 260px !important;
+    }
+
+    .footer-col {
+        padding: 10px;
+    }
+
+    .footer-col h3 {
+        font-size: 0.95rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 0.82rem;
+    }
+
+    .copyright {
+        font-size: 1.5rem !important;
+        padding: 10px 8px;
+    }
+}
+
+/* === RESPONSIVE: TABLETS Y MÓVILES (600px - 1029px) === */
+@media (max-width: 1029px) {
+    .footer-logos-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .footer-logo {
+        max-width: 180px;
+    }
+
+    .logo-dgeti img {
+        height: 58px;
+        width: 55px;
+        max-width: 60px;
+    }
+
+    .logo-sep img {
+        height: 45px;
+        max-width: 160px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .footer-col {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        margin: 0;
+    }
+
+    .footer-col h3 {
+        font-size: 1rem;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        font-size: 0.85rem;
+    }
+}
+
+/* === PANTALLAS CUADRADAS ESPECÍFICAS (600px - 788px) === */
+@media (min-width: 600px) and (max-width: 788px) {
+    .footer-logos-row,
+    .footer-content {
+        padding: 0 8px;
+    }
+
+    .footer-col {
+        padding: 10px;
+        min-width: 100%;
+    }
+}
+
+/* === AUMENTAR TAMAÑO DE IMÁGENES SOLO EN MÓVILES === */
+@media (max-width: 768px) {
+    .footer-logo {
+        max-width: 100%;
+        flex: none;
+    }
+    
+    .logo-dgeti img {
+        height: 150px !important;
+        width: 150px !important;
+        max-width: none !important;
+    }
+    
+    .logo-sep img {
+        height: 80px !important;
+        max-width: 250px !important;
+    }
+}

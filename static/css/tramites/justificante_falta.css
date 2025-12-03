@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root {
+    --white: #ffffff;
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--guinda-oscuro);
+    line-height: 1.6;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    color: var(--guinda);
+    padding: 60px 50px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: var(--guinda);
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px; /* Mismo ancho que quieres para la línea */
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto; /* Centra la línea */
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Secciones */
+.seccion {
+    padding: 4rem 0;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.seccion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sección de Documentación */
+.documentation-section {
+    background-color: var(--guinda-claro);
+    color: var(--white);
+}
+
+.documentation-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    font-family: "Oswald", sans-serif;
+}
+
+.documentation-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.documentation-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+    background-color: var(--guinda-oscuro);
+    border: none;
+}
+
+.documentation-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+}
+
+.documentation-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-family: "Oswald", sans-serif;
+}
+
+.documentation-card ul {
+    padding-left: 1.5rem;
+}
+
+.documentation-card li {
+    margin-bottom: 0.5rem;
+}
+
+/* Sección de Procedimientos */
+.procedure-section {
+    padding: 4rem 0;
+}
+
+.procedure-section:nth-child(odd) {
+    background-color: var(--white);
+}
+
+.procedure-section:nth-child(even) {
+    background-color: var(--guinda-principal);
+    color: var(--white);
+}
+
+.procedure-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem; /* Aumenta el gap general */
+}
+
+.procedure-text {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 1rem; /* Espacio interno a la derecha */
+}
+
+.procedure-image {
+    flex: 0 0 auto;
+    object-fit: cover; 
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    margin-left: 3rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem; /* Espacio interno */
+}
+
+.procedure-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.procedure-image img {
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+.procedure-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+}
+
+.procedure-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-family: "Oswald", sans-serif;
+}
+
+.procedure-section ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.procedure-section li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* Estilo específico para la segunda sección de procedimientos */
+.procedure-section:nth-child(even) .procedure-text {
+    order: 2;
+}
+
+.procedure-section:nth-child(even) .procedure-image {
+    order: 1;
+    transform: translateX(-20px);
+}
+
+.procedure-section:nth-child(even) .procedure-image.visible {
+    transform: translateX(0);
+}
+
+/* Sección de Nota y Horario */
+.info-section {
+    padding: 4rem 0;
+    background-color: var(--guinda-oscuro);
+}
+
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--guinda-claro);
+    font-family: "Oswald", sans-serif;
+}
+
+.info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.note-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+    background-color: var(--guinda-claro);
+    color: var(--white);
+    border-left: 8px solid var(--white);
+    text-align: left;
+}
+
+.note-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-family: "Oswald", sans-serif;
+}
+
+/* ANIMACIONES MEJORADAS */
+.lista-animada li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.lista-animada li.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nota-destacada {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.nota-destacada.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .procedure-content {
+        flex-direction: column;
+        gap: 3rem; 
+    }
+
+    .procedure-text{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .procedure-image {
+        width: 100%;
+        max-width: 500px; 
+        margin-left:0; 
+        margin-top: 1rem; 
+        align-self: center; 
+    }
+
+    .documentation-cards {
+        flex-direction: column;
+    }
+
+    .info-cards {
+        flex-direction: column;
+    }
+
+    .procedure-section:nth-child(even) .procedure-text,
+    .procedure-section:nth-child(even) .procedure-image {
+        order: unset;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .seccion {
+        padding: 2.5rem 0;
+    }
+}
+
+/* Media query para pantallas medianas (769px a 1040px) */
+@media (min-width: 769px) and (max-width: 1040px) {
+    .procedure-content {
+        flex-direction: column;
+    }
+
+    .procedure-text {
+        width: 100%;
+        margin-bottom: 2rem;
+        margin-top:1rem;
+    }
+
+    .procedure-image {
+        width: 100%;
+        max-width: 600px;
+        margin-left: 0;
+        margin-top: 1rem;
+        align-self: center;
+    }
+
+    .procedure-section:nth-child(even) .procedure-text,
+    .procedure-section:nth-child(even) .procedure-image {
+        order: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .documentation-section,
+    .procedure-section,
+    .info-section {
+        padding: 2.5rem 0;
+    }
+
+    .documentation-section h2,
+    .procedure-section h2,
+    .info-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .documentation-card,
+    .note-card,
+    .schedule-card {
+        padding: 1.5rem;
+    }
+
+    .procedure-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .procedure-section ol,
+    .procedure-section ul {
+        padding-left: 1.2rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .note-card {
+        border-left: 6px solid var(--white);
+    }
+
+    .procedure-content {
+        gap: 1rem; 
+    }
+
+    .procedure-image {
+        width: 100%;
+        max-width: 400px !important; 
+        height: auto; 
+        margin: 1.5rem auto; 
+        padding: 0 10px;
+    }
+
+    .procedure-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .procedure-text {
+        margin-bottom: 1.5rem;
+    }
+}

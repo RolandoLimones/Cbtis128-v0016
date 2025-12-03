@@ -1,0 +1,173 @@
+:root {
+    --white: #ffffff;
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+
+body {
+    justify-content: initial !important; 
+    align-items: initial !important; 
+    margin-top: 0 !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.container {
+    max-width: 1280px; 
+    width: 90%;      
+    margin: 0 auto;  
+    margin-top: 100px;
+    margin-bottom: 100px; 
+    padding: 0;      
+}
+
+/* Título principal */
+.container h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--guinda); 
+    text-align: center;
+    margin-top: 0;         /* Se basa en el margin-top del .container */
+    margin-bottom: 50px; 
+    font-size: 3rem; 
+    letter-spacing: 2px;
+    animation: slideDown 0.8s ease-out; 
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px; /* Mismo ancho que quieres para la línea */
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto; /* Centra la línea */
+}
+
+/* Contenedor de la sección (el "cuadrito") */
+section.mb-5 {
+    background-color: var(--white); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--guinda-principal); 
+    animation: slideRight 1s ease-out; 
+}
+
+/* Párrafos dentro de la sección */
+section p {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 400;
+    line-height: 1.8; 
+    margin-bottom: 25px;
+    color: var(--guinda-oscuro); 
+    font-size: 1.3rem; 
+}
+
+
+section ul {
+    list-style-type: none; 
+    padding-left: 0;
+    margin-bottom: 30px;
+    display: flex;     
+    gap: 30px;         
+    flex-wrap: wrap;   
+    justify-content: center; 
+}
+
+section li {
+    margin-bottom: 0; 
+    padding-left: 0;
+    position: relative;
+    flex: 1 1 400px; 
+    max-width: 50%; 
+}
+
+section li::before {
+    content: none; 
+}
+
+/* ESTILOS DE ENLACES (LAS "TARJETITAS") */
+section a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7rem; 
+    color: var(--guinda-principal); 
+    text-decoration: none;
+    display: flex;     
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+    
+    /* Estilos de la Tarjeta */
+    padding: 30px 20px; 
+    border: 2px solid var(--guinda-oscuro);
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    height: 100%; 
+    
+    transition: all 0.3s ease;
+}
+
+section a:hover {
+    color: var(--white);
+    background-color: var(--guinda-principal); 
+    border-color: var(--guinda-principal);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); 
+    text-decoration: none;
+}
+
+section a::after {
+    content: ' \2197'; 
+    margin-left: 10px;
+    font-size: 1em;
+    vertical-align: middle;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+section a:hover::after {
+    transform: rotate(45deg); 
+}
+
+/* ========================================================================= */
+/* 4. RESPONSIVE BÁSICO (Para móvil) */
+/* ========================================================================= */
+
+@media (max-width: 900px) {
+    
+    /* Ajuste de margen en móvil para navbar */
+    .container {
+        margin-top: 70px; /* Menos espacio en móvil */
+        margin-bottom: 70px; 
+    }
+    
+    .container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    section p {
+        font-size: 1.1rem; 
+        line-height: 1.6;
+    }
+    
+    /* Las tarjetas se apilan en móvil */
+    section ul {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    section li {
+        max-width: 100%; 
+        flex: 1 1 100%;
+    }
+    
+    section a {
+        font-size: 1.5rem; 
+        padding: 20px 15px;
+    }
+}

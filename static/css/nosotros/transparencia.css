@@ -1,0 +1,282 @@
+/* transparencia.css */
+/* Estilos específicos para la página de Transparencia */
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 26, 59, 0.85); /* Más opaco e intenso */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(162, 34, 69, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(121, 45, 66, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(78, 42, 52, 0.2) 0%, transparent 50%);
+    background-size: 500px 500px, 700px 700px, 300px 300px;
+    z-index: -2;
+}
+
+/* transparencia.css - sin fondo */
+.contendedor-principal {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px 20px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.contendedor-principal h2 {
+    font-family: "Bebas Neue", sans-serif;
+    color: var(--white);
+    font-size: 4rem;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: titleSlideIn 1s ease-out;
+}
+
+.contendedor-principal h2::after {
+    content: "";
+    display: block;
+    width: 100px; /* Mismo ancho que quieres para la línea */
+    height: 3px;
+    background-color: var(--white);
+    margin: 10px auto 0 auto; /* Centra la línea */
+}
+
+/* Imagen de convocatoria */
+.imagen-contacto {
+    display: block;
+    max-width: 900px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: imageReveal 1.2s ease-out 0.3s forwards;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-bottom: 30px;
+}
+
+.imagen-contacto:hover {
+    transform: 
+        scale(1.02) 
+        translateY(-8px);
+}
+
+.imagen-contacto:active {
+    transform: scale(1) translateY(-4px);
+    transition: all 0.2s ease;
+}
+
+@keyframes imageReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Efecto de brillo sutil en la imagen */
+.imagen-contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transition: left 0.6s ease;
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.imagen-contacto:hover::before {
+    left: 100%;
+}
+
+/* Partículas decorativas sutiles */
+.contendedor-principal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px;
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+    animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Efecto de borde luminoso */
+.contendedor-principal::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.03), 
+        transparent,
+        rgba(255, 255, 255, 0.02)
+    );
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.contendedor-principal:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contendedor-principal h2 {
+        font-size: 3rem;
+    }
+    
+    .imagen-contacto {
+        max-width: 800px;
+        width: 95%;
+    }
+    
+    /* ELIMINADO: Los estilos que movían la línea */
+    /* .contendedor-principal h2::before,
+    .contendedor-principal h2::after {
+        width: 50px;
+        margin-right: 20px;
+        margin-left: 20px;
+    } */
+}
+
+@media (max-width: 768px) {
+    .contendedor-principal {
+        padding: 30px 15px 20px;
+    }
+    
+    .contendedor-principal h2 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .imagen-contacto {
+        max-width: 100%;
+        width: 98%;
+        border-radius: 12px;
+    }
+    
+    /* ELIMINADO: Los estilos que movían la línea */
+    /* .contendedor-principal h2::before,
+    .contendedor-principal h2::after {
+        width: 30px;
+        margin-right: 15px;
+        margin-left: 15px;
+    } */
+}
+
+@media (max-width: 480px) {
+    .contendedor-principal {
+        padding: 25px 10px 15px;
+    }
+    
+    .contendedor-principal h2 {
+        font-size: 2.2rem;
+    }
+    
+    .imagen-contacto {
+        border-radius: 10px;
+    }
+    
+    /* ELIMINADO: Los estilos que movían la línea */
+    /* .contendedor-principal h2::before,
+    .contendedor-principal h2::after {
+        width: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+    } */
+    
+    /* OPCIONAL: Si quieres hacer la línea más pequeña en móvil, usa esto: */
+    .contendedor-principal h2::after {
+        width: 80px; /* Línea un poco más corta en móvil */
+    }
+}
+
+/* Mejoras de accesibilidad */
+.imagen-contacto:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 5px;
+}
+
+/* Efecto de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Estados de carga para la imagen */
+.imagen-contacto.loading {
+    background: linear-gradient(90deg, 
+        rgba(139, 26, 59, 0.3) 25%, 
+        rgba(139, 26, 59, 0.2) 50%, 
+        rgba(139, 26, 59, 0.3) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    min-height: 400px;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

@@ -1,0 +1,659 @@
+/*
+ * Archivo: /static/css/oferta_academica.css 
+ */
+:root {
+    --white: #ffffff;
+    --guinda: #a22245;
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+    --guinda-medio: #821b3c;
+}
+
+/* ========================================================================= */
+/* 1. CONTENEDOR PRINCIPAL Y TÍTULOS */
+/* ========================================================================= */
+
+.oferta-academica-container {
+    max-width: 1700px; 
+    width: 95%; 
+    margin: 40px auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-family: "Bebas Neue", sans-serif;
+    color: #8D1B43; 
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--guinda);
+    margin: 10px auto 0 auto;
+}
+
+.parrafo-objetivo {
+    max-width: 650px;
+    text-align: justify;
+    justify-self: center;
+    font-size: 1.2rem;
+}
+
+.swipe-hint {
+    font-family: 'Fredoka', sans-serif;
+    color: #883A54;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 40px;
+    line-height: 1.4;
+    padding: 0 10px;
+}
+
+/* ========================================================================= */
+/* 2. ESTRUCTURA DEL CARRUSEL Y FLECHAS */
+/* ========================================================================= */
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.career-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 0;
+    width: 100%;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    scrollbar-width: none;
+    touch-action: pan-y;
+}
+
+.career-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.career-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+.carousel-nav-btn {
+    background-color: var(--guinda-principal);
+    color: var(--white);
+    border: none;
+    padding: 12px 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    flex-shrink: 0;
+    margin: 0 5px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    touch-action: manipulation;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--guinda);
+    transform: scale(1.05);
+}
+
+.carousel-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.carousel-nav-btn:disabled:hover {
+    background-color: var(--guinda-principal);
+}
+
+/* ========================================================================= */
+/* 3. ESTILO DE LA TARJETA INDIVIDUAL */
+/* ========================================================================= */
+
+.career-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(25% - 15px);
+    max-width: calc(25% - 15px);
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.4s ease-in-out;
+    touch-action: pan-y;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+.career-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.career-card:active {
+    cursor: grabbing;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%;
+    overflow: hidden;
+    transition: filter 0.4s ease-in-out;
+}
+
+.card-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-content {
+    background-color: var(--guinda-medio);
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.4s, filter 0.4s ease-in-out;
+}
+
+.card-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--white);
+    transition: color 0.4s;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    color: var(--white);
+    transition: color 0.4s;
+}
+
+.card-description {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.4s;
+}
+
+/* ========================================================================= */
+/* Botón "Ver más" */
+/* ========================================================================= */
+
+.career-card .read-more-btn { 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 60%; 
+    height: 50px;
+    
+    background-color: #883A54 !important; 
+    color: #FFFFFF !important; 
+    
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; 
+    cursor: pointer;
+    
+    min-height: 44px;
+    min-width: 120px;
+    touch-action: manipulation;
+
+    opacity: 0; 
+    transition: opacity 0.4s ease-in-out, background-color 0.3s, transform 0.3s; 
+    z-index: 12; 
+    pointer-events: auto;
+}
+
+.career-card .read-more-btn:hover {
+    background-color: var(--guinda) !important;
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+
+/* ========================================================================= */
+/* 4. EFECTOS HOVER */
+/* ========================================================================= */
+
+.career-card:hover .card-image-wrapper {
+    filter: blur(5px) brightness(0.7); 
+}
+
+.career-card:hover .card-content {
+    filter: blur(5px) brightness(0.7); 
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.career-card:hover .card-overlay {
+    opacity: 1; 
+}
+
+.career-card:hover .read-more-btn {
+    opacity: 1; 
+    background-color: #FFFFFF !important;
+    color: var(--guinda-principal) !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+.career-card:hover .read-more-btn:hover {
+    background-color: var(--guinda-principal) !important;
+    color: #FFFFFF !important;
+    border: 2px solid var(--guinda-principal) !important;
+}
+
+.career-card:hover .card-subtitle,
+.career-card:hover .card-title,
+.career-card:hover .card-description {
+    color: #FFFFFF; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9); 
+    z-index: 13; 
+    position: relative; 
+}
+
+/* ========================================================================= */
+/* 5. RESPONSIVE MEJORADO */
+/* ========================================================================= */
+
+/* Tablet grande y laptops pequeñas */
+@media (max-width: 1200px) {
+    .career-card {
+        flex: 0 0 calc(33.333% - 14px);
+        max-width: calc(33.333% - 14px);
+    }
+    
+    .oferta-academica-container {
+        margin: 30px auto 50px auto;
+        padding: 0 15px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .career-card {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+    
+    .carousel-wrapper {
+        padding: 0 10px;
+    }
+    
+    .carousel-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        padding: 10px 14px;
+    }
+    
+    .page-title {
+        font-size: 2.8rem;
+        margin-bottom: 12px;
+    }
+    
+    .swipe-hint {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* Tablets pequeñas y móviles grandes */
+@media (max-width: 768px) {
+    .career-card {
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+    
+    .oferta-academica-container {
+        width: 100%;
+        margin: 25px auto 40px auto;
+        padding: 0 10px;
+    }
+    
+    .page-title {
+        font-size: 2.4rem;
+        letter-spacing: 0.5px;
+    }
+    
+    h1::after {
+        width: 80px;
+        height: 2px;
+        margin: 8px auto 0 auto;
+    }
+    
+    .swipe-hint {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        padding: 0 5px;
+    }
+    
+    .career-carousel {
+        gap: 15px;
+        padding: 8px 0;
+        scroll-behavior: auto;
+    }
+    
+    .carousel-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        padding: 8px 12px;
+        margin: 0 3px;
+    }
+    
+    /* Optimización para táctil en tablets */
+    .career-card {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+    
+    .career-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    /* Prevenir zoom en doble toque */
+    .card-image-wrapper,
+    .card-content {
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Móviles */
+@media (max-width: 576px) {
+    .career-card {
+        flex: 0 0 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+    
+    .carousel-wrapper {
+        padding: 0 5px;
+    }
+    
+    .carousel-nav-btn {
+        display: none;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .swipe-hint {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    .career-carousel {
+        gap: 12px;
+        padding: 5px 0;
+    }
+    
+    .card-content {
+        padding: 15px;
+    }
+    
+    .card-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .card-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .card-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .career-card .read-more-btn {
+        width: 70%;
+        height: 45px;
+        font-size: 1.2rem;
+        opacity: 0.9 !important;
+        background-color: #883A54 !important;
+        color: white !important;
+        font-weight: bold;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .read-more-btn:active {
+        transform: translate(-50%, -50%) scale(0.95) !important;
+        background-color: var(--guinda) !important;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 375px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .swipe-hint {
+        font-size: 0.85rem;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+    }
+    
+    .card-description {
+        font-size: 0.8rem;
+    }
+    
+    .career-card {
+        flex: 0 0 calc(100% - 10px);
+        max-width: calc(100% - 10px);
+    }
+    
+    .career-card .read-more-btn {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}
+
+/* Orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .oferta-academica-container {
+        margin: 20px auto 30px auto;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    
+    .swipe-hint {
+        margin-bottom: 20px;
+    }
+    
+    .career-card {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* ========================================================================= */
+/* 6. DISPOSITIVOS TÁCTILES vs CON MOUSE */
+/* ========================================================================= */
+
+/* Dispositivos con hover (mouse) */
+@media (hover: hover) and (pointer: fine) {
+    .career-card:hover .card-image-wrapper {
+        filter: blur(5px) brightness(0.7);
+    }
+    
+    .career-card:hover .card-content {
+        filter: blur(5px) brightness(0.7);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .career-card:hover .card-overlay {
+        opacity: 1;
+    }
+    
+    .career-card:hover .read-more-btn {
+        opacity: 1;
+    }
+}
+
+/* Dispositivos táctiles (sin hover) */
+@media (hover: none) and (pointer: coarse) {
+    .career-card:active {
+        transform: scale(0.98);
+    }
+    
+    .career-card .read-more-btn {
+        opacity: 1 !important;
+        background-color: #883A54 !important;
+        color: #FFFFFF !important;
+        pointer-events: auto !important;
+    }
+    
+    /* Mejor feedback visual en táctil */
+    .read-more-btn:active {
+        background-color: var(--guinda) !important;
+        transform: translate(-50%, -50%) scale(0.95) !important;
+        transition: transform 0.1s ease, background-color 0.1s ease;
+    }
+    
+    /* Prevenir selección de texto */
+    .career-card * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Pantallas muy grandes */
+@media (min-width: 1920px) {
+    .oferta-academica-container {
+        max-width: 1800px;
+    }
+    
+    .career-card {
+        flex: 0 0 calc(20% - 16px);
+        max-width: calc(20% - 16px);
+    }
+}
+
+/* ========================================================================= */
+/* 7. OPTIMIZACIONES ESPECÍFICAS PARA iOS */
+/* ========================================================================= */
+
+@supports (-webkit-touch-callout: none) {
+    .career-carousel {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .career-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .read-more-btn {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+}
+
+/* ========================================================================= */
+/* 8. MEJORAS DE ACCESIBILIDAD */
+/* ========================================================================= */
+
+/* Mejorar contraste para lectura */
+@media (prefers-contrast: high) {
+    .card-title,
+    .card-subtitle,
+    .card-description {
+        color: #FFFFFF !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.8) !important;
+    }
+}
+
+/* Reducir movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+    .career-card,
+    .card-image-wrapper,
+    .card-content,
+    .read-more-btn,
+    .carousel-nav-btn {
+        transition: none !important;
+    }
+    
+    .career-carousel {
+        scroll-behavior: auto;
+    }
+}

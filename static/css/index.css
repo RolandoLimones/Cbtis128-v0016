@@ -1,0 +1,922 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --guinda-principal: #8B1A3B;
+    --guinda-oscuro: #6A0D2A;
+    --guinda-claro: #A52A4F;
+    --guinda-suave: #F8E8ED;
+    --rojo-intenso: #B22222;
+    --rojo-oscuro: #8B0000;
+    --rojo-claro: #DC143C;
+    --rojo-suave: #FFE8E8;
+    --guinda-gradient: linear-gradient(135deg, #8B1A3B 0%, #6A0D2A 100%);
+    --rojo-gradient: linear-gradient(135deg, #B22222 0%, #8B0000 100%);
+    --suave-gradient: linear-gradient(135deg, #F8E8ED 0%, #FFFFFF 100%);
+    --blanco-gradient: linear-gradient(135deg, #FFFFFF 0%, #F9F9F9 100%);
+    --texto-oscuro: #333333;
+    --texto-claro: #666666;
+    --fondo-claro: #F9F9F9;
+    --fondo-blanco: #FFFFFF;
+}
+.texto-normal {
+    font-family: 'Fredoka' !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka';
+    line-height: 1.6;
+    color: var(--texto-oscuro);
+    background: var(--fondo-blanco);
+}
+
+.main-index {
+    width: 100%;
+    max-width: 100%;
+}
+
+h2 {
+    font-family: "bebas neue", sans-serif;
+    letter-spacing: 3px;
+    color: var(--guinda-principal);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 3.5rem;
+    text-align: justify;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 100px; /* Mismo ancho que quieres para la línea */
+    height: 3px;
+    background-color: var(--white);
+    margin: 10px auto 0 auto; /* Centra la línea */
+}
+
+h3 {
+    color: var(--guinda-oscuro);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.box-title {
+    font-family: "bebas neue", sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    color: var(--guinda-principal);
+}
+
+.box-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--guinda-principal);
+}
+
+.box-title-history {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    color: var(--fondo-blanco);
+}
+
+.box-title-history::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--fondo-blanco);
+}
+
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* SECCIÓN FACEBOOK - CON IMAGEN DE FONDO */
+.inicio-facebook {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding: 1rem 4rem 4rem 4rem;
+    align-items: center;
+    min-height: 60vh;
+    position: relative;
+}
+
+/* Imagen de fondo con borrosidad */
+.inicio-facebook::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../imagenes/fondo.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* Capa overlay para el filtro rojo */
+.inicio-facebook::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(139, 26, 59, 0.7); /* Overlay guinda semitransparente */
+    z-index: -1;
+}
+
+.bienvenido-container,
+.facebook-box {
+    position: relative;
+    z-index: 2;
+}
+
+.bienvenido-container {
+    flex: 0 0 40%;
+    padding: 1.5rem 0;
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.bienvenido-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--fondo-blanco);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.mensaje-bienvenida {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--fondo-blanco);
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.facebook-box {
+    flex: 0 0 50%;
+    padding: 1.5rem 0;
+    animation: fadeInRight 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.facebook-box .box-title {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+    color: var(--fondo-blanco);
+}
+
+.facebook-box .box-title::after {
+    background: var(--fondo-blanco);
+}
+
+/* SECCIÓN CONÓCENOS - GRADIENTE SUAVE BLANCO */
+.inicio-conocenos {
+    padding: 4rem 5%;
+    background: var(--blanco-gradient);
+    min-height: 60vh;
+}
+
+.box-conocenos {
+    display: flex;
+    align-items: center;
+    gap: 4%;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    min-height: 300px;
+}
+
+/* Alternar posición de imagen y texto con animaciones diferentes */
+.box-conocenos:nth-child(odd) {
+    flex-direction: row;
+}
+
+
+.box-conocenos:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+
+.logo-conocenos {
+    object-fit: cover !important;
+    flex: 0 0 35%;
+    max-width: 500px;
+    height: auto;
+    max-height: 350px;
+    border-radius: 8px;
+    align-self: center;
+    border: 3px solid var(--guinda-suave);
+}
+
+.box-conocenos > div {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.box-conocenos h2 {
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 0px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    text-align: justify;
+    color: var(--guinda-principal);
+}
+
+.conocenos-p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--texto-claro);
+    text-align: left;
+    margin: 0;
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    min-height: 200px;
+
+}
+
+/* SECCIÓN CÓDIGO DE ÉTICA - FONDO GUINDA SÓLIDO */
+.inicio-etica {
+    padding: 4rem 5%;
+    background: var(--guinda-principal);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-etica {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.content-etica h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--fondo-blanco);
+}
+
+.codigo-lista {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.codigo-lista li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    padding-left: 2rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    color: var(--fondo-blanco);
+    font-size: 1.1rem;
+}
+
+.codigo-lista li:hover {
+    background: rgba(255,255,255,0.1);
+    padding-left: 2.5rem;
+    border-bottom-color: rgba(255,255,255,0.4);
+    transform: translateX(5px);
+}
+
+.codigo-lista li:before {
+    content: "•";
+    color: var(--fondo-blanco);
+    font-weight: bold;
+    position: absolute;
+    left: 0.5rem;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.codigo-lista li:hover:before {
+    transform: scale(1.3);
+    color: var(--rojo-suave);
+}
+
+/* SECCIÓN MENSAJE DEL DIRECTOR - GRADIENTE ROJO SUAVE */
+.inicio-mensaje {
+    padding: 4rem 5%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-mensaje {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.content-mensaje h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--guinda-principal);
+    position: relative;
+}
+
+.content-mensaje h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--rojo-gradient);
+}
+
+.mensaje-contenido {
+    height: 400px;
+    overflow-y: auto;
+    padding: 2rem;
+    border: 2px solid var(--guinda-suave);
+    border-radius: 12px;
+    background: var(--fondo-blanco);
+    box-shadow: 0 4px 15px rgba(139, 26, 59, 0.1);
+}
+
+.mensaje-contenido p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--texto-oscuro);
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.content-mensaje:hover p {
+    color: var(--texto-claro);
+}
+
+/* Personalizar scrollbar */
+.mensaje-contenido::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mensaje-contenido::-webkit-scrollbar-track {
+    background: var(--guinda-suave);
+    border-radius: 4px;
+}
+
+.mensaje-contenido::-webkit-scrollbar-thumb {
+    background: var(--rojo-gradient);
+    border-radius: 4px;
+}
+
+.mensaje-contenido::-webkit-scrollbar-thumb:hover {
+    background: var(--guinda-principal);
+}
+
+/* SECCIÓN HISTORIA - GRADIENTE GUINDA OSCURO */
+.inicio-historia {
+    padding: 4rem 5%;
+    background: var(--guinda-gradient);
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pdf-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 3px solid var(--fondo-blanco);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    background: var(--fondo-blanco);
+    position: relative;
+}
+
+.pdf-wrapper {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    overflow: hidden;
+    transition: opacity 0.4s ease;
+}
+
+#pdfCanvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    border-bottom: 2px solid var(--guinda-suave);
+}
+
+.pdf-wrapper.loading #pdfCanvas {
+    opacity: 0.6;
+}
+
+/* FLECHAS SOBRE LA IMAGEN (círculo guinda) */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--guinda-gradient);
+    border: 2px solid var(--fondo-blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
+    color: var(--fondo-blanco);
+}
+
+.pdf-wrapper:hover .nav-arrow {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-arrow:hover {
+    background: var(--rojo-gradient);
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 8px 20px rgba(139, 26, 59, 0.5);
+}
+
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+/* NAVEGACIÓN: PÁGINA + PUNTOS */
+.pdf-nav {
+    padding: 12px 20px;
+    background: var(--guinda-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-indicator {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.pdf-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pdf-dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.pdf-dot.active {
+    background: #FFD700;
+    width: 12px;
+    height: 12px;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    transform: scale(1.2);
+}
+
+.box-title-history {
+    font-family: "bebas neue", sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    color: var(--fondo-blanco);
+}
+
+/* MENSAJE DE CARGA */
+.pdf-loading {
+    padding: 35px 20px;
+    color: var(--guinda-principal);
+    font-style: italic;
+    font-size: 1.15em;
+    background: var(--rojo-suave);
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.pdf-error {
+    color: var(--rojo-oscuro);
+    background: var(--rojo-suave);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px;
+    border: 1px solid var(--guinda-suave);
+    font-family: monospace;
+    text-align: center;
+    font-size: 0.95em;
+}
+
+/* Responsive - Tablets */
+@media (max-width: 1024px) {
+    /* FIX PRINCIPAL: Prevenir desbordamiento horizontal */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-index {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .inicio-facebook {
+        padding: 1rem 2rem 3rem 2rem;
+    }
+    
+    .box-conocenos {
+        gap: 3%;
+    }
+    
+    .logo-conocenos {
+        flex: 0 0 40%;
+        max-width: 350px;
+        max-height: 300px;
+    }
+    
+    .box-conocenos > div {
+        flex: 0 0 57%;
+    }
+    
+    .conocenos-p {
+        min-height: 180px;
+    }
+    
+    .content-mensaje,
+    .content-etica {
+        width: 90%;
+    }
+}
+
+/* Responsive - Móviles */
+@media (max-width: 768px) {
+    /* FIX PRINCIPAL: Prevenir desbordamiento horizontal */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-index {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .box-title {
+        font-size: 2.5rem;
+    }
+    
+    .box-title-history {
+        font-size: 2rem;
+    }
+
+    .inicio-facebook {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 2rem 5%;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .bienvenido-container,
+    .facebook-box{
+        align-items: center;
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .fb-page{
+        align-items: center;
+        flex: 0 0 100%;
+        width: 80%;
+        padding: 1rem 0;
+    }
+    
+    .bienvenido-container h2 {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .box-conocenos {
+        flex-direction: column !important;
+        gap: 1.5rem;
+        padding: 1rem 0;
+        min-height: auto;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .logo-conocenos {
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: 250px;
+        width: 100%;
+    }
+    
+    .box-conocenos > div {
+        flex: 0 0 100%;
+        height: auto;
+        width: 100%;
+    }
+    
+    .box-conocenos h2 {
+        min-height: auto;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    .conocenos-p {
+        min-height: auto;
+        align-items: flex-start;
+        text-align: left;
+        width: 100% !important;
+    }
+    
+    .content-mensaje,
+    .content-etica {
+        width: 95%;
+    }
+    
+    .mensaje-contenido {
+        height: 350px;
+        padding: 1.5rem;
+        width: 100%;
+    }
+    
+    .mensaje-contenido p {
+        padding: 0;
+        text-align: left;
+    }
+    
+    .pdf-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .nav-arrow {
+        opacity: 1;
+        pointer-events: all;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .left-arrow { left: 10px; }
+    .right-arrow { right: 10px; }
+}
+
+/* Responsive - Móviles pequeños */
+@media (max-width: 480px) {
+    .inicio-facebook,
+    .inicio-conocenos,
+    .inicio-etica,
+    .inicio-mensaje,
+    .inicio-historia {
+        padding: 1.5rem 3%;
+        min-height: 50vh;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .box-title {
+        font-size: 2rem;
+    }
+    
+    .box-title-history {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .logo-conocenos {
+        max-height: 200px;
+    }
+    
+    .conocenos-p {
+        font-size: 0.9rem;
+    }
+    
+    .box-conocenos h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content-mensaje,
+    .content-etica {
+        width: 98%;
+    }
+    
+    .mensaje-contenido p {
+        font-size: 1rem;
+    }
+    
+    .mensaje-contenido {
+        height: 300px;
+        padding: 1rem;
+    }
+    
+    .codigo-lista li {
+        font-size: 1rem;
+        padding: 0.8rem 0;
+        padding-left: 1.5rem;
+    }
+    
+    .pdf-container {
+        width: 98%;
+    }
+}
+
+/* Experiencia táctil para dispositivos móviles */
+@media (pointer: coarse) {
+    /* FIX PRINCIPAL: Prevenir desbordamiento horizontal */
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-index {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .nav-arrow {
+        opacity: 1;
+        pointer-events: all;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .codigo-lista li:hover {
+        background: transparent;
+        padding-left: 2rem;
+        transform: none;
+    }
+    
+    .codigo-lista li:active {
+        background: rgba(255,255,255,0.1);
+        padding-left: 2.5rem;
+        transform: translateX(5px);
+    }
+    
+    .content-mensaje:hover p {
+        color: var(--texto-oscuro);
+    }
+    
+    .mensaje-contenido p:active {
+        color: var(--texto-claro);
+    }
+    
+    .card:hover {
+        transform: none;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+    
+    .overlay {
+        transform: translateY(0);
+        opacity: 1;
+        background: linear-gradient(to top, rgba(78, 42, 52, 0.95), rgb(162, 34, 69, 0.85));
+    }
+}
+
+/* Para pantallas pequeñas en general */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: none;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:hover img {
+        transform: none;
+    }
+    
+    .overlay {
+        transform: translateY(0);
+        opacity: 1;
+        background: linear-gradient(to top, rgba(78, 42, 52, 0.95), rgb(162, 34, 69, 0.85));
+    }
+}
