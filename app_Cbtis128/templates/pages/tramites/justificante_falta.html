@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/justificante_falta.css' %}">
+    <header>
+        <div class="container">
+            <h1>JUSTIFICANTE DE FALTA</h1>
+        </div>
+    </header>
+
+    <section class="documentation-section seccion">
+        <div class="container">
+            <h2>Documentación Requerida</h2>
+            <div class="documentation-cards">
+                <div class="documentation-card">
+                    <h3>Falta por Enfermedad</h3>
+                    <h4>Documentación Requerida:</h4>
+                    <ul class="lista-animada">
+                        <li>Receta médica (en caso de enfermedad)</li>
+                        <li>Copia de credencial de elector del padre/madre/tutor</li>
+                    </ul>
+                </div>
+                <div class="documentation-card">
+                    <h3>Falta por Otros Motivos</h3>
+                    <h4>Documentación Requerida:</h4>
+                    <ul class="lista-animada">
+                        <li>Carta justificativa</li>
+                        <li>Copia de credencial de elector del padre/madre/tutor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="procedure-section seccion">
+        <div class="container">
+            <h2>Procedimientos</h2>
+            <div class="procedure-content">
+                <div class="procedure-text">
+                    <h3>Falta por Enfermedad</h3>
+                    <p>Si faltas por enfermedad, sigue estos pasos:</p>
+                    <ol class="lista-animada">
+                        <li>Dirígete al Departamento de Enfermería.</li>
+                        <li>Entrega la receta médica y la copia de la credencial de tu padre/madre/tutor.</li>
+                        <li>Proporciona tu nombre y grupo para elaborar tu justificante.</li>
+                        <li>Los estudiantes de servicio social te entregarán tu justificante aproximadamente dos horas después.</li>
+                    </ol>
+                    <p>¡Listo! Ya tienes tu justificante médico.</p>
+                </div>
+                <div class="procedure-image">
+                    <img src="{% static 'imagenes/tramites/enfermeria.jpeg' %}" alt="Procedimiento para falta por enfermedad" class="imagen-seccion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="procedure-section seccion">
+        <div class="container">
+            <div class="procedure-content">
+                <div class="procedure-image">
+                    <img src="{% static 'imagenes/tramites/orientacion.jpeg' %}" alt="Procedimiento para falta por otros motivos" class="imagen-seccion">
+                </div>
+                <div class="procedure-text">
+                    <h3>Falta por Otros Motivos</h3>
+                    <p>Para faltas que no sean por enfermedad:</p>
+                    <ol class="lista-animada">
+                        <li>Dirígete a Orientación con tu padre/madre/tutor.</li>
+                        <li>Explica el motivo de la falta.</li>
+                        <li>Entrega una carta justificativa firmada por tu tutor.</li>
+                        <li>Espera la validación y firma del justificante.</li>
+                    </ol>
+                    <p>¡Listo! Tu falta ha sido justificada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section seccion">
+        <div class="container">
+            <div class="info-cards">
+                <div class="note-card nota-destacada">
+                    <h3>Nota Importante:</h3>
+                    <p>Los justificantes deben solicitarse dentro de los 3 días hábiles siguientes a la falta. Después de este plazo, no se aceptarán justificantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'script/tramites/justificante_falta.js' %}"></script>
+{% endblock %}
+

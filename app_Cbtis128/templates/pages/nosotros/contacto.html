@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<link rel="stylesheet" href="{% static 'css/nosotros/contacto.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+<div class="main-container">
+    <h1>CONTACTO</h1>
+  <div class="contacto-section">
+    <div class="contacto-cont" id="telefono-card">
+        <div class="contacto-card">
+            <div class="card-front">
+                <img src="{% static 'imagenes/contacto/telefono.jpg' %}" alt="Teléfono" class="imagen-contacto">
+                <div class="contenido-frontal">
+                    <h2>TELÉFONO</h2>
+                    <button class="btn-contacto">Ver más</button>
+                </div>
+            </div>
+            <div class="card-back">
+                <h2>TELÉFONO</h2>
+                <p class="info-contacto">619-1934 y 619-1570</p>
+                <button class="btn-contacto">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contacto-cont" id="correo-card">
+        <div class="contacto-card">
+            <div class="card-front">
+                <img src="{% static 'imagenes/contacto/correo.jpeg' %}" alt="Correo" class="imagen-contacto">
+                <div class="contenido-frontal">
+                    <h2>CORREO</h2>
+                    <button class="btn-contacto">Ver más</button>
+                </div>
+            </div>
+            <div class="card-back">
+                <h2>CORREO</h2>
+                <p class="info-contacto">direccion@cbtis128.edu.mx</p>
+                <button class="btn-contacto">Volver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contacto-cont" id="direccion-card">
+        <div class="contacto-card">
+            <div class="card-front">
+                <img src="{% static 'imagenes/contacto/direccion.png' %}" alt="Dirección" class="imagen-contacto">
+                <div class="contenido-frontal">
+                    <h2>DIRECCIÓN</h2>
+                    <button class="btn-contacto">Ver más</button>
+                </div>
+            </div>
+            <div class="card-back">
+                <h2>DIRECCIÓN</h2>
+                <p class="info-contacto">Calle Nueva Zelanda No. 7870, Col. Oasis.<br>Ciudad Juárez, Chihuahua, México</p>
+                <button class="btn-contacto">Volver</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Sección de directorio CORREGIDA -->
+<div class="directorio-section">
+    <div class="directorio-container">
+      <h2 class="directorio-titulo">DIRECTORIO</h2>
+      <div class="directorio-grid">
+          <!-- Departamento 1 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Dirección y Administración</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:subdireccion@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-building-gear"></i></span>
+                          subdireccion@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 2 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Control Escolar</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:controlescolar@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-journal-text"></i></span>
+                          controlescolar@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 3 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Prácticas Profesionales</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:practicasprofesionales@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-briefcase"></i></span>
+                          practicasprofesionales@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 4 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Titulación</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:titulacion@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-award"></i></span>
+                          titulacion@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 5 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Servicio Social</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:serviciosocial@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-people"></i></span>
+                          serviciosocial@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 6 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Becas</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:becas@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-wallet2"></i></span>
+                          becas@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 7 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Orientación TM</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:orientacion.tm@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-compass"></i></span>
+                          orientacion.tm@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 8 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Orientación TV</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:orientacion.tv@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-compass-fill"></i></span>
+                          orientacion.tv@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 9 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Tutorías</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:tutorias@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-person-check"></i></span>
+                          tutorias@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 10 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Biblioteca</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:biblioteca@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-book"></i></span>
+                          biblioteca@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Departamento 11 -->
+          <div class="departamento-item">
+              <div class="departamento-header">
+                  <div class="departamento-nombre">Información General</div>
+                  <div class="departamento-icono">▼</div>
+              </div>
+              <div class="departamento-correos">
+                  <div class="correo-item">
+                      <a href="mailto:informacion@cbtis128.edu.mx" class="correo-link">
+                          <span class="correo-icono"><i class="bi bi-info-circle"></i></span>
+                          informacion@cbtis128.edu.mx
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Funcionalidad para las tarjetas giratorias
+  document.querySelectorAll('.contacto-cont').forEach(card => {
+      card.addEventListener('click', function(e) {
+          if (e.target.classList.contains('btn-contacto')) {
+              e.stopPropagation();
+              if (this.classList.contains('flipped')) {
+                  this.classList.remove('flipped');
+              } else {
+                  this.classList.add('flipped');
+              }
+          }
+      });
+  });
+
+  // Funcionalidad CORREGIDA para los acordeones del directorio
+document.querySelectorAll('.departamento-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.parentElement;
+
+        // Cerrar otros
+        document.querySelectorAll('.departamento-item').forEach(other => {
+            if (other !== item) other.classList.remove('active');
+        });
+
+        // Alternar este
+        item.classList.toggle('active');
+    });
+});
+</script>
+
+{% endblock %}

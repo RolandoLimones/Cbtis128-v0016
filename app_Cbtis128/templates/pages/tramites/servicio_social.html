@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/servicio_social.css' %}">
+    <div class="contenedor-principal">
+        <h2>SERVICIO SOCIAL</h2>
+        
+        <section class="seccion seccion-gris">
+            <div class="seccion-contenido">
+                <h3>Requisitos para Realizar Servicio Social</h3>
+                <div class="cuadros-requisitos">
+                    <div class="cuadro-requisito">
+                        <h4>Semestre Mínimo</h4>
+                        <p>3er semestre para trabajar en la escuela</p>
+                        <p>4to semestre para trabajar en instituciones externas</p>
+                    </div>
+                    <div class="cuadro-requisito">
+                        <h4>Duración</h4>
+                        <p>480 horas mínimo</p>
+                    </div>
+                    <div class="cuadro-requisito">
+                        <h4>Horario</h4>
+                        <p>4 horas diarias</p>
+                        <p>20 horas semanales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion seccion-roja">
+            <div class="seccion-contenido">
+                <div class="contenido-con-imagen">
+                    <div class="contenido-texto">
+                        <h3>Procedimiento para Iniciar Servicio Social</h3>
+                        <ol class="lista-animada">
+                            <li>Busca una institución donde realizar el servicio social y verifica que tengan vacantes.</li>
+                            <li>Solicita los requisitos específicos de la institución (horarios, actividades, etc.).</li>
+                            <li>Una vez confirmada la institución, dirígete al Departamento de Servicio Social en Control Escolar.</li>
+                            <li>Recibirás códigos QR para descargar los formatos requeridos.</li>
+                            <li>Llena los formatos con tus datos y los de la institución (dirección y firma del jefe inmediato).</li>
+                        </ol>
+                    </div>
+                    <div class="contenido-imagen">
+                        <img class="imagen-seccion" src="{% static 'imagenes/tramites/control_escolar.jpeg' %}" alt="Procedimiento servicio social">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion seccion-oscura">
+            <div class="seccion-contenido">
+                <div class="contenido-con-imagen">
+                    <div class="contenido-imagen">
+                        <img class="imagen-seccion" src="{% static 'imagenes/tramites/servicio_social_oficina.jpeg' %}" alt="Durante el servicio social">
+                    </div>
+                    <div class="contenido-texto">
+                        <h3>Durante el Servicio Social</h3>
+                        <ol class="lista-animada">
+                            <li>Realiza 3 reportes bimestrales (cada dos meses) detallando las actividades realizadas.</li>
+                            <li>Al finalizar, elabora un ensayo sobre tu experiencia y conocimientos adquiridos.</li>
+                            <li>Entrega todos los reportes y el ensayo en el Departamento de Servicio Social.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion seccion-azul">
+            <div class="seccion-contenido">
+                <div class="documentacion-contenido">
+                    <h3>Documentación a Entregar</h3>
+                    <ul class="lista-animada">
+                        <li>Formato de inicio de servicio social (llenado y firmado)</li>
+                        <li>3 reportes bimestrales de actividades</li>
+                        <li>Ensayo final de experiencia</li>
+                        <li>Carta de terminación de la institución receptora</li>
+                    </ul>
+                    <p>¡Listo! Has completado tu servicio social satisfactoriamente.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion seccion-nota">
+            <div class="seccion-contenido">
+                <div class="cuadro-nota">
+                    <h4>Recomendación:</h4> 
+                    <p>Entrega tus reportes bimestrales puntualmente cada dos meses para evitar problemas y posibles interrogatorios sobre retrasos en la entrega.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static 'script/tramites/servicio_social.js' %}"></script>
+{% endblock %}

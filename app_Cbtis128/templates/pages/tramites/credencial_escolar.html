@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/credencial_escolar.css' %}">
+    <div class="contenedor-principal">
+        <h2>CREDENCIAL ESCOLAR</h2>
+    </div>
+    
+    <section class="seccion seccion-reposicion">
+        <div class="contenido-seccion">
+            <div class="texto-seccion">
+                <h3>Reposición de Credencial (en caso de extravío o robo)</h3>
+                <p>Si por alguna razón tu credencial se extravía o te la roban, sigue estos pasos:</p>
+                <ol class="lista-animada">
+                    <li>Dirígete a Recursos Financieros para realizar el pago correspondiente. El costo es de $100 pesos.</li>
+                    <li>Recibirás un comprobante de pago.</li>
+                    <li>Con el comprobante, dirígete a Control Escolar y solicita la reposición de tu credencial.</li>
+                    <li>Te tomarán una nueva fotografía para la credencial.</li>
+                    <li>Espera unos minutos mientras procesan tu nueva credencial.</li>
+                </ol>
+                <p>¡Listo! Ya tienes tu nueva credencial escolar.</p>
+            </div>
+            <div class="imagen-seccion">
+                <img src="{% static 'imagenes/tramites/financieros.jpeg' %}" alt="Reposición de credencial">
+            </div>
+        </div>
+    </section>
+    
+    <section class="seccion seccion-renovacion">
+        <div class="contenido-seccion">
+            <div class="imagen-seccion">
+                <img src="{% static 'imagenes/tramites/control_escolar.jpeg' %}" alt="Renovación de credencial">
+            </div>
+            <div class="texto-seccion">
+                <h3>Renovación de Credencial (para nuevo ciclo escolar)</h3>
+                <p>Para renovar tu credencial al inicio de un nuevo ciclo escolar:</p>
+                <ol class="lista-animada">
+                    <li>Dirígete a Control Escolar con tu credencial actual.</li>
+                    <li>Solicita la renovación de tu credencial.</li>
+                    <li>El personal te colocará un sticker de renovación en la parte posterior de tu credencial.</li>
+                </ol>
+                <p>¡Listo! Tu credencial ya está renovada y válida para el nuevo ciclo escolar.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="seccion seccion-nota">
+        <div class="contenido-seccion">
+            <div class="texto-seccion">
+                <div class="nota-destacada">
+                    <h4>Nota:</h4>
+                    <p>Recuerda que tu credencial escolar es un documento de identificación oficial dentro de la institución. Mantenla en buen estado y evita su extravío.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'script/tramites/credencial_escolar.js' %}"></script>
+{% endblock %}

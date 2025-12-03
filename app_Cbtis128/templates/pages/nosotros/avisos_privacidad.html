@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+    {% block content %}
+    {% load static %}
+    <main class="container">
+    <h1 class="text-center">Avisos de Privacidad</h1>
+
+    <section class="mb-5">
+        <p>
+            En cumplimiento a lo establecido por la Ley General de Protección de Datos Personales
+            en Posesión de Sujetos Obligados, se pone a disposición de los titulares de los datos
+            personales los siguientes documentos:
+        </p>
+        <ul>
+            <li>
+                <a href="http://www.cbtis128.edu.mx/assets/document/concursos/AVISO%20DE%20PRIVACIDAD%20INTEGRAL.pdf" target="_blank">
+                    Aviso de Privacidad Integral
+                </a>
+            </li>
+            <li>
+                <a href="http://www.cbtis128.edu.mx/assets/document/concursos/AVISO%20DE%20PRIVACIDAD%20SIMPLIFICADO.pdf" target="_blank">
+                    Aviso de Privacidad Simplificado
+                </a>
+            </li>
+        </ul>
+        <p>
+            Para más información sobre el tratamiento de sus datos personales, consulte los documentos anteriores
+            o comuníquese con el área correspondiente del plantel.
+        </p>
+        </section>
+        </main> 
+        <link rel="stylesheet" href="{% static 'css/nosotros/avisos_privacidad.css' %}"> 
+    
+{% endblock %}

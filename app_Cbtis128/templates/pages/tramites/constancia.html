@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/constancia.css' %}">
+    <div class="contenedor-principal">
+        <h2>CONSTANCIA</h2>
+        
+        <section class="seccion seccion-procedimiento">
+            <div class="contenedor-contenido">
+                <div class="contenedor-texto">
+                    <h3>Procedimiento para Solicitar Constancia</h3>
+                    <p>Para solicitar cualquier tipo de constancia, sigue estos pasos:</p>
+                    <ol class="lista-animada">
+                        <li>Dirígete a Control Escolar y solicita la constancia que necesitas.</li>
+                        <li>Anota tus datos en el cuaderno de solicitudes que te proporcionen.</li>
+                        <li>Regresa al siguiente día en horario de atención para recoger tu constancia.</li>
+                        <li>Verifica que todos tus datos sean correctos antes de retirarte.</li>
+                    </ol>
+                    <p>¡Listo! Ya tienes tu constancia.</p>
+                </div>
+                
+                <div class="contenedor-imagen">
+                    <img class="imagen-seccion" src="{% static 'imagenes/tramites/control_escolar.jpeg' %}" alt="Tramites 1">
+                </div>
+            </div>
+        </section>
+        
+        <section class="seccion seccion-nota-horario">
+            <div class="contenedor-contenido">
+                <div class="contenedor-texto">
+                    <div class="contenedor-nota-horario">
+                        <div class="cuadro-nota">
+                            <h4>Nota:</h4> 
+                            <p>El tiempo de elaboración de constancias es de 24 horas hábiles. Asegúrate de solicitarla con anticipación si la necesitas para una fecha específica.</p>
+                        </div>
+                        
+                        <div class="cuadro-horario">
+                            <h4>Horario de atención en Control Escolar:</h4> 
+                            <p>Lunes a Viernes de 8:00 am a 3:00 pm.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contenedor-imagen">
+                    <img class="imagen-seccion" src="{% static 'imagenes/tramites/control_escolar.jpeg' %}" alt="Control escolar">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static 'script/tramites/constancia.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block title %}CBTIS 128 | Revista Digital{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/nosotros/revista-digital.css' %}">
+
+<main id="main">
+    <section>
+        <h1 class="apartados__titulo">Revista Digital Oficial</h1>
+        
+        <div class="revista__contenedor">
+            <iframe src="//v.calameo.com/?bkcode=0070365374386efa61528&mode=mini" 
+                    width="880" 
+                    height="700" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    allowtransparency 
+                    allowfullscreen 
+                    style="margin:0 auto;">
+            </iframe>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

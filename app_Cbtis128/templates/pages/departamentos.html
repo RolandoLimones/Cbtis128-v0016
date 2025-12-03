@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <div class="depa-cont">
+        <h2>DEPARTAMENTOS</h2>
+        
+        <div class="depa-div">
+            <h3>ADMINISTRACIÓN</h3>
+            <ul>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="http://www.cbtis128.edu.mx/assets/document/departamentos/constitucion_politica_26022013-2.pdf" target="_blank">Constitución Política de los Estados Unidos Mexicanos</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="http://www.cbtis128.edu.mx/assets/document/departamentos/LEY-FEDERAL-DEL-TRABAJO-2.pdf" target="_blank">Ley Federal del Trabajo</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="http://www.cbtis128.edu.mx/assets/document/departamentos/LEY-GENERAL-DE-EDUCACION-2.pdf" target="_blank">Ley Federal de la Educación</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="http://www.cbtis128.edu.mx/assets/document/departamentos/LEYDELSERVICIOPROFESIONALDOCENTESEGUNELDOF2013-1.pdf" target="_blank">Ley del Servicio Profesional Docente</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="http://www.cbtis128.edu.mx/assets/document/departamentos/Reglamento_de_las_Condiciones_Generales_de_Trabajo_del_Personal_de_la_SEP-2.pdf" target="_blank">Reglamento de las Condiciones Generales de Trabajo del Personal de la SEP</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="depa-div">
+            <h3>DOCENTES</h3>
+            <ul>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="https://portalautoservicios-sems.sep.gob.mx/login.jsp;jsessionid=ef4ff336391e38ce7ca3a262be5d" target="_blank">Portal de servicios de los trabajadores de la SEP</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="https://siseems.sems.gob.mx/produccion/index.php?page=users.LoginUser" target="_blank">Sistema de servicios escolares de la educación media superior</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="#">Pendiente</a>
+                </li>
+                <li>
+                    <i class="fas fa-file-alt"></i>
+                    <a href="#">Pendiente</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="{% static 'css/departamentos.css' %}">
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/titulacion.css' %}">
+    <header class="page-header">
+        <div class="container">
+            <h1>TITULACIÓN</h1>
+        </div>
+    </header>
+
+    <section class="seccion section-process">
+        <div class="container">
+            <h2 class="section-title">Proceso de Titulación</h2>
+            <div class="process-container">
+                <div class="process-content">
+                    <p>El proceso de titulación se realiza una vez que has completado tu servicio social y estás en 6to semestre. Sigue estos pasos:</p>
+                    <ol class="lista-animada">
+                        <li>La escuela organiza sesiones fotográficas para el título durante el 6to semestre.</li>
+                        <li>Se publica una convocatoria en la página oficial de Facebook del CBTIS 128 llamando a los estudiantes para presentar documentación.</li>
+                        <li>Acude a la convocatoria con los siguientes documentos:
+                            <ul class="lista-animada">
+                                <li>Certificado de secundaria (original y copia)</li>
+                                <li>Certificado de preparatoria (original y copia)</li>
+                                <li>Identificación oficial</li>
+                                <li>Otros documentos (Especificados en la siguiente sección)</li>
+                            </ul>
+                        </li>
+                        <li>Posteriormente, se publicará otra convocatoria en Facebook para la entrega oficial de títulos.</li>
+                        <li>Acude en la fecha indicada para recibir tu título.</li>
+                    </ol>
+                    <p>¡Listo! Ya tienes tu título de técnico profesional.</p>
+                </div>
+                <div class="process-image">
+                    <img src="{% static 'imagenes/tramites/titulacion.jpeg' %}" alt="Proceso de titulación" class="imagen-seccion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion section-documentation">
+        <div class="container">
+            <h2 class="section-title">Documentación Requerida</h2>
+            <div class="documentation-grid">
+                <div class="document-card">
+                    <h3>Documentos Académicos</h3>
+                    <ul class="lista-animada">
+                        <li>Certificado de secundaria (original y 2 copias)</li>
+                        <li>Certificado de bachillerato (original y 2 copias)</li>
+                    </ul>
+                </div>
+                <div class="document-card">
+                    <h3>Documentos de Identificación</h3>
+                    <ul class="lista-animada">
+                        <li>Acta de nacimiento (original y 2 copias)</li>
+                        <li>INE (original y 2 copias)</li>
+                        <li>CURP (2 copias)</li>
+                    </ul>
+                </div>
+                <div class="document-card">
+                    <h3>Otros Documentos</h3>
+                    <ul class="lista-animada">
+                        <li>Comprobante de domicilio (2 copias)</li>
+                        <li>4 fotografías tamaño título (blanco y negro, frente, con traje formal)</li>
+                        <li>Constancia de servicio social liberado</li>
+                        <li>Constancia de prácticas profesionales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion section-timeline">
+        <div class="container">
+            <h2 class="section-title">Línea de Tiempo del Proceso</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>6to Semestre</h3>
+                        <p>Se toman fotografías para el título y se inicia el proceso de documentación.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Convocatoria 1</h3>
+                        <p>Entrega de documentación requerida según fechas establecidas en Facebook.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Convocatoria 2</h3>
+                        <p>Entrega oficial de títulos en ceremonia programada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion section-note">
+        <div class="container">
+            <div class="nota-destacada">
+                <h3>Nota Importante:</h3>
+                <p>Es fundamental estar atento a las publicaciones en la página oficial de Facebook del CBTIS 128, ya que todas las convocatorias y fechas importantes se anuncian por ese medio.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'script/tramites/titulacion.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/alumnos/grupos-Deportivos.css' %}">
+
+<main class="grupos-container">
+    <h2>GRUPOS CULTURALES</h2>
+    
+    <div class="grid">
+        <!-- VOLEIBOL  hombre -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/vol_mas.jpeg' %}">
+            <h3 class="titulo">Voleibol Varonil</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Voleibol Varonil</h4>
+                <p class="descripcion">
+                    Lunes 4–6 pm<br>
+                    Profesora: Omar Dávila
+                </p>
+            </div>
+        </div>
+
+        <!-- VOLEIBOL  mujer -->
+        <div class="card">
+           <img src="{% static 'imagenes/alumnos/vol_fem.jpeg' %}"> 
+           <h3 class="titulo">Voleibol Femenil</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Voleibol Femenil</h4>
+                <p class="descripcion">
+                    Jueves 4–6 pm, Sábados 8–10 am<br>
+                    Profesora: Cecy García
+                </p>
+            </div>
+        </div>
+
+        <!-- Softbol -->
+        <div class="card">
+           <img src="{% static 'imagenes/alumnos/softbol.jpeg' %}"> 
+           <h3 class="titulo">Softbol</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Softbol</h4>
+                <p class="descripcion">
+                    Sábados 9–11 am<br>
+                    Entrenador: Jesús Chávez
+                </p>
+            </div>
+        </div>
+
+        <!-- Basquetbol -->
+        <div class="card">
+           <img src="{% static 'imagenes/alumnos/basquet.jpeg' %}"> 
+           <h3 class="titulo">Basquetbol</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Basquetbol</h4>
+                <p class="descripcion">
+                    Horarios: Martes y Jueves 6–8 pm<br>
+                    Entrenador: Rodrigo Macías
+                </p>
+            </div>
+        </div>
+
+        <!-- FÚTBOL hombre -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/fut_mas.jpeg' %}"> 
+            <h3 class="titulo">Fútbol Varonil</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Fútbol Varonil</h4>
+                <p class="descripcion">
+                    Martes y Jueves 8–10 am y 2–4 pm<br>
+                    Entrenador: Ricardo Moreno<br>
+                </p>
+            </div>
+        </div>
+
+        <!-- FÚTBOL mujer -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/fut_fem.jpeg' %}"> 
+            <h3 class="titulo">Fútbol Femenil</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Fútbol Femenil</h4>
+                <p class="descripcion">
+                    Lunes y Miércoles 2–4 pm<br>
+                    Entrenadora: Liz Garay <br>
+                </p>
+            </div>
+        </div>
+
+        <!-- FÚTBOL AMERICANO -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/americano.jpeg' %}" alt="Vision imagen" class="logo-conocenos"> 
+            <h3 class="titulo">Fútbol Americano</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Fútbol Americano</h4>
+                <p class="descripcion">
+                    Lunes a Viernes 9–11 pm<br>
+                    Coach: Daniel Gallegos
+                </p>
+            </div>
+        </div>
+
+        <!-- Atletismo -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/atletismo.jpeg' %}" alt="Vision imagen" class="logo-conocenos"> 
+            <h3 class="titulo">Atletismo</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Atletismo</h4>
+                <p class="descripcion">
+                    Sábados 8–10 am<br>
+                    Entrenador: Omar Cruz
+                </p>
+            </div>
+        </div>
+
+        <!-- Tochito -->
+        <div class="card">
+            <img src="{% static 'imagenes/alumnos/tochito.jpeg' %}" alt="Vision imagen" class="logo-conocenos"> 
+            <h3 class="titulo">Tochito</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Tochito</h4>
+                <p class="descripcion">
+                    Martes 8–10 pm, Sábados 1–3 pm<br>
+                    Entrenador: Fernando Gallegos
+                </p>
+            </div>
+        </div>
+
+        <!-- BÉISBOL -->
+        <div class="card">
+            <img src=" {% static 'imagenes/alumnos/beisbol.jpeg' %} " alt="Vision imagen" class="logo-conocenos"> 
+            <h3 class="titulo">Béisbol</h3>
+            <div class="overlay">
+                <div class="tags">
+                </div>
+                <h4 class="overlay-titulo">Béisbol</h4>
+                <p class="descripcion">
+                    Martes y Jueves 5–7 pm<br>
+                    Entrenador: Juan Torres
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

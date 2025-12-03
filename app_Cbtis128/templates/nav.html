@@ -1,0 +1,78 @@
+
+{% load static %}
+            
+<!-- Incluir Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"  >
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+<nav id="navbar">
+    <!-- LOGO -->
+    <a href="{% url 'index' %}">
+        <div class="logo">
+            <img src="{% static 'imagenes/logo.png' %}" alt="Logo CBTis 128">
+            <span class="titulo-nav">CBTIS 128</span>
+        </div>
+    </a>
+
+    <!-- MENÚ PRINCIPAL -->
+    <ul class="menu" id="menu">
+        <li><a href="{% url 'index' %}"><i class="bi bi-house"></i> Inicio</a></li>
+        
+        <li>
+            <a><i class="bi bi-people"></i>Nosotros</a>
+            <ul>
+                <li><a href="{% url 'transparencia' %}">Transparencia</a></li>
+                <li><a href="{% url 'avisos_privacidad' %}">Avisos de privacidad</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'revista_digital' %}">Revista Digital</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a><i class="bi bi-person"></i> Alumnos</a>
+            <ul>
+                <li><a href="{% url 'grupos-culturales' %}">Grupos culturales</a></li>
+                <li><a href="{% url 'grupos-deportivos' %}">Grupos deportivos</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a><i class="bi bi-clipboard-check"></i> Guía de trámites</a>
+            <ul>
+                <li><a href="{% url 'credencial_escolar' %}">Credencial escolar</a></li>
+                <li><a href="{% url 'justificante_falta' %}">Justificante de falta</a></li>
+                <li><a href="{% url 'constancia' %}">Constancia</a></li>
+                <li><a href="{% url 'titulacion' %}">Titulación</a></li>
+                <li><a href="{% url 'servicio_social' %}">Servicio social</a></li>
+                <li><a href="{% url 'recursamiento' %}">Recursamientos</a></li>
+            </ul>
+        </li>
+        
+        <li>
+            <a href="{%url 'oferta_academica' %}"><i class="bi bi-book"></i> Oferta académica</a>
+        </li>
+
+        <li><a href="{% url 'departamentos' %}"><i class="bi bi-building"></i> Departamentos</a></li>
+        <li><a href="{% url 'ubicacion' %}"><i class="bi bi-geo-alt"></i> Ubicación</a></li>
+    </ul>
+
+    <!-- BÚSQUEDA -->
+    <div class="search-container">
+        <div class="search-icon" id="searchIcon">
+             <img src="{% static 'imagenes/busqueda.png' %}">
+        </div>
+        
+        <div class="search-bar" id="searchBar">
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar páginas, trámites, información...">
+            <button class="close-search" id="closeSearch"><i class="bi bi-x"></i></button>
+        </div>
+        
+        <!-- Resultados de búsqueda -->
+        <div class="search-results" id="searchResults">
+            <!-- Los resultados se mostrarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <!-- MENÚ HAMBURGUESA -->
+    <div class="hamburger" id="hamburger"><i class="bi bi-list"></i></div>
+</nav>

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/tramites/recursamiento.css' %}">
+    <header class="header">
+        <div class="container">
+            <h1>RECURSAMIENTO</h1>
+        </div>
+    </header>
+
+    <!-- Sección de características -->
+    <section class="features-section seccion">
+        <div class="container">
+            <h2 class="section-title">Opciones de Regularización</h2>
+            <div class="features-container">
+                <div class="feature-box extraordinario">
+                    <h3>Extraordinario</h3>
+                    <h4>Costo:</h4><p>$30 pesos por materia</p>
+                    <h4>Modalidad:</h4><p> Examen</p>
+                    <h4>Recomendado para:</h4><p> Alumnos que necesitan regularizar 1-2 materias</p>
+                </div>
+                
+                <div class="feature-box recurso-intersemestral">
+                    <h3>Recurso Intersemestral</h3>
+                    <h4>Costo:</h4><p> $250 pesos</p>
+                    <h4>Modalidad:</h4><p> Clases + Examen</p>
+                    <h4>Recomendado para:</h4><p> Alumnos que necesitan regularizar 3+ materias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de procedimientos - Extraordinario -->
+    <section class="procedure-section extraordinario-procedure seccion">
+        <div class="container">
+            <h2 class="procedure-title">Procedimiento - Extraordinario</h2>
+            <div class="procedure-content">
+                <div class="procedure-text">
+                    <p>Si deseas presentar un examen extraordinario, sigue estos pasos:</p>
+                    <ol class="lista-animada">
+                        <li>Dirígete a Control Escolar para que sellen tu historial académico y te informen cuántos extraordinarios debes presentar.</li>
+                        <li>Acude a Recursos Financieros para obtener información sobre el pago del extraordinario.</li>
+                        <li>Realiza el pago de $30 pesos por materia en el banco correspondiente.</li>
+                        <li>Llena el formato E5 en línea para notificar a la Secretaría de Educación.</li>
+                        <li>Entrega en Control Escolar:
+                            <ul class="lista-animada">
+                                <li>Original y copia del comprobante de pago del banco</li>
+                                <li>Formato E5 impreso</li>
+                                <li>Historial académico sellado</li>
+                            </ul>
+                        </li>
+                        <li>Consulta con tu maestro o en el Departamento de Servicios Docentes la fecha, hora y lugar del examen.</li>
+                    </ol>
+                    <p>¡Listo! Ya realizaste tu extraordinario.</p>
+                </div>
+                <img class="procedure-image imagen-seccion" src="{% static 'imagenes/tramites/control_escolar.jpeg' %}" alt="Examen aprobado" >   
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de procedimientos - Recurso Intersemestral -->
+    <section class="procedure-section recurso-procedure seccion">
+        <div class="container">
+            <h2 class="procedure-title">Procedimiento - Recurso Intersemestral</h2>
+            <div class="procedure-content">
+                <img class="procedure-image-2 imagen-seccion" src="{% static 'imagenes/tramites/financieros.jpeg' %}" alt="Recurso aprobado">
+                <div class="procedure-text">
+                    <p>Si prefieres tomar un recurso intersemestral, sigue este procedimiento:</p>
+                    <ol class="lista-animada">
+                        <li>Dirígete a Control Escolar para que sellen tu historial académico y te informen cuántos recursos debes tomar.</li>
+                        <li>Acude a Recursos Financieros para realizar el pago de $250 pesos y llevar tu historial académico.</li>
+                        <li>El personal llenará el formato E5 por ti.</li>
+                        <li>Después del pago, consulta con tu profesor o en el Departamento de Servicios Docentes las fechas y lugar donde se impartirán las clases de recursos.</li>
+                        <li>Asiste puntualmente a todas las clases programadas.</li>
+                        <li>Presenta el examen final del recurso.</li>
+                    </ol>
+                    <p>¡Listo! Ya completaste tu recurso intersemestral.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de notas -->
+    <section class="notes-section seccion">
+        <div class="container">
+            
+            <div class="note-box nota-destacada">
+                <h4>Nota sobre el Formato E5:</h4>
+                <p>Si no sabes cómo llenar el formato E5, fuera de Recursos Financieros encontrarás las instrucciones detalladas para completarlo correctamente.</p>
+            </div>
+            
+            <div class="note-box nota-destacada">
+                <h4>IMPORTANTE:</h4>
+                <p>Los pagos deben realizarse en las fechas establecidas en el calendario oficial. No se aceptarán pagos extemporáneos.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'script/tramites/recursamiento.js' %}"></script>
+{% endblock %}

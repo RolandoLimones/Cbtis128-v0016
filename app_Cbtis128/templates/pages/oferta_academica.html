@@ -1,0 +1,525 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/oferta_academica.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="oferta-academica-container">
+        <h1 class="page-title">OBJETIVO</h1>
+        <p class="parrafo-objetivo">El Bachillerato Tecnológico tiene como objetivo fomentar una educación integral, 
+        contribuyendo a la articulación y flexibilidad del sistema educativo, acorde con los 
+        intereses de los estudiantes y las necesidades de desarrollo del país, la Secretaría 
+        de Educación Pública a través de la Subsecretaría de Educación e Investigación Tecnológicas, 
+        con pleno respeto al federalismo educativo. Esta modalidad es bivalente, ya que se puede 
+        estudiar el bachillerato al mismo tiempo que una carrera de técnico, las materias propedéuticas 
+        que se cursan son prácticamente las mismas que en el bachillerato general, por lo que se prepara 
+        para estudiar una carrera profesional del nivel superior, adicionalmente, el plan de estudios 
+        incluye materias tecnológicas que se cursan junto con las antes mencionadas y que preparan como 
+        técnico del nivel medio superior al estudiante en las diversas carreras que ofrece ésta modalidad 
+        de bachillerato.</p>
+    </div>
+    <div class="oferta-academica-container">
+        <h1 class="page-title">ESPECIALIDADES</h1>
+        
+        <p class="swipe-hint">Desliza y toca las tarjetas para conocer más información</p>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-nav-btn prev" aria-label="Carreras anteriores">&lt;</button>
+            
+            <div class="career-carousel" role="region" aria-label="Carrusel de carreras técnicas">
+                
+                {# GRUPO ORIGINAL DE TARJETAS #}
+                <div class="career-card" data-original="true" role="group" aria-label="Administración de Recursos Humanos">
+                    <div class="card-overlay"></div> 
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/administracion.jpeg' %}" alt="Estudiantes trabajando en administración" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">ADMINISTRACIÓN DE RECURSOS HUMANOS</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante gestionar trámites administrativos, integrar el talento humano y manejar nómina y compensaciones.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2023/PROGRAMA_DE_ESTUDIOS_ADMINISTRACION_DE_RECURSOS_HUMANOS.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Administración de Recursos Humanos">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Electrónica">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/electronica.jpeg' %}" alt="Circuito electrónico y componentes" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">ELECTRÓNICA</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante aplicar dispositivos y sistemas electrónicos compactos y eficientes, que están presentes en todos los ámbitos del ser humano.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2023/PROGRAMA_DE_ESTUDIO_ELECTRONICA.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Electrónica">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Gericultura">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/gericultura.jpeg' %}" alt="Cuidado de adultos mayores" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">GERICULTURA</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante brindar atención integral a la población adulta mayor, asistiendo en su autocuidado y rehabilitación.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2025/GERICULTURA_010825.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Gericultura">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Inteligencia Artificial">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/IA.jpeg' %}" alt="Representación visual de inteligencia artificial" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">INTELIGENCIA ARTIFICIAL</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante aplicar técnicas de representación del conocimiento y procesamiento de información en diversos contextos.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2024/INTELIGENCIA_ARTIFICIAL1.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Inteligencia Artificial">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Laboratorista Químico">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/quimica.jpeg' %}" alt="Laboratorio químico con instrumentos" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">LABORATORISTA QUÍMICO</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante realizar operaciones básicas de laboratorio, análisis de muestras y aplicación de tratamientos de saneamiento.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2025/LABORATORISTA%20QUIMICO.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Laboratorista Químico">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Programación">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/programacion.jpeg' %}" alt="Código de programación en pantalla" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">PROGRAMACIÓN</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante desarrollar software de sistemas informáticos, administrar bases de datos y desarrollar aplicaciones web y móviles.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Programas_presenciales/2023/PROGRAMA%20DE%20ESTUDIOS%20PROGRAMACION.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Programación">VER MÁS</a>
+                </div>
+
+                <div class="career-card" data-original="true" role="group" aria-label="Soporte de Equipo de Cómputo">
+                    <div class="card-overlay"></div>
+                    <div class="card-image-wrapper">
+                        <img src="{% static 'imagenes/oferta_academica/soporte.jpeg' %}" alt="Técnico reparando computadora" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-subtitle">Técnico en</span>
+                        <h2 class="card-title">SOPORTE DE EQUIPO DE CÓMPUTO</h2>
+                        <p class="card-description">Ofrecemos las competencias profesionales que permiten al estudiante realizar operaciones de soporte y mantenimiento a equipos de cómputo de manera presencial y a distancia, e instalar redes LAN.</p>
+                    </div>
+                    <a href="https://cosfac.sems.gob.mx/Docentes/Programas_de_estudio_del_Bachillerato_Tecnologico_Formacion_Profesional/Programas_de_estudio_de_ED_2022/DGETI/Soporte_y_mantenimiento_de_equipo_de_cómputo.pdf" class="read-more-btn" target="_blank" rel="noopener noreferrer" aria-label="Ver más información sobre Soporte de Equipo de Cómputo">VER MÁS</a>
+                </div>
+            </div>
+            
+            <button class="carousel-nav-btn next" aria-label="Siguientes carreras">&gt;</button>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Elementos principales
+    const carousel = document.querySelector(".career-carousel");
+    const prevBtn = document.querySelector(".carousel-nav-btn.prev");
+    const nextBtn = document.querySelector(".carousel-nav-btn.next");
+    const cards = document.querySelectorAll('.career-card');
+
+    // Estado del carrusel
+    let currentIndex = 0;
+    let scrollSize = 0;
+    let isMoving = false;
+    let isTouching = false;
+    let startX = 0;
+    let currentX = 0;
+    let startScrollLeft = 0;
+    let cardsPerView = 4;
+
+    /* ============================================================
+     1. DETECCIÓN DE DISPOSITIVO TÁCTIL
+     ============================================================ */
+    const isTouchDevice = 'ontouchstart' in window || 
+                         navigator.maxTouchPoints > 0 || 
+                         navigator.msMaxTouchPoints > 0;
+    
+    if (isTouchDevice) {
+        document.body.classList.add('touch-device');
+        console.log('Dispositivo táctil detectado');
+    }
+
+    /* ============================================================
+     2. CÁLCULO DE DIMENSIONES RESPONSIVAS
+     ============================================================ */
+    function calculateCardsPerView() {
+        const width = window.innerWidth;
+        
+        if (width <= 576) return 1;      // Móviles
+        if (width <= 768) return 2;      // Tablets pequeñas
+        if (width <= 992) return 2;      // Tablets
+        if (width <= 1200) return 3;     // Laptops pequeñas
+        return 4;                        // Desktop
+    }
+
+    function calculateDimensions() {
+        const firstCard = carousel.querySelector('.career-card');
+        if (!firstCard) return null;
+        
+        cardsPerView = calculateCardsPerView();
+        const cardWidth = firstCard.offsetWidth;
+        const gap = 20; // Debe coincidir con el gap en CSS (20px)
+        
+        scrollSize = cardWidth + gap;
+        
+        return { cardsPerView, cardWidth, gap, scrollSize };
+    }
+
+    /* ============================================================
+     3. INICIALIZACIÓN DEL CARRUSEL
+     ============================================================ */
+    function initCarousel() {
+        const dimensions = calculateDimensions();
+        if (!dimensions) return;
+        
+        // Actualizar estado inicial de botones
+        updateButtonStates();
+        
+        // Configurar eventos según el dispositivo
+        if (isTouchDevice) {
+            setupTouchEvents();
+        }
+        
+        console.log('Carrusel inicializado:', dimensions);
+    }
+
+    /* ============================================================
+     4. CONFIGURACIÓN DE EVENTOS TÁCTILES
+     ============================================================ */
+    function setupTouchEvents() {
+        console.log('Configurando eventos táctiles...');
+        
+        // Touch Start
+        carousel.addEventListener('touchstart', handleTouchStart, { passive: false });
+        
+        // Touch Move
+        carousel.addEventListener('touchmove', handleTouchMove, { passive: false });
+        
+        // Touch End
+        carousel.addEventListener('touchend', handleTouchEnd, { passive: false });
+        
+        // Touch Cancel
+        carousel.addEventListener('touchcancel', handleTouchCancel);
+    }
+
+    function handleTouchStart(e) {
+        if (isMoving) return;
+        
+        isTouching = true;
+        startX = e.touches[0].clientX;
+        currentX = startX;
+        startScrollLeft = carousel.scrollLeft;
+        
+        // Prevenir scroll vertical y zoom
+        e.preventDefault();
+        
+        console.log('Touch start en posición:', startX);
+    }
+
+    function handleTouchMove(e) {
+        if (!isTouching || isMoving) return;
+        
+        currentX = e.touches[0].clientX;
+        const diff = startX - currentX;
+        
+        // Mover el carrusel según el desplazamiento táctil
+        carousel.scrollLeft = startScrollLeft + diff;
+        
+        e.preventDefault();
+    }
+
+    function handleTouchEnd(e) {
+        if (!isTouching) return;
+        isTouching = false;
+        
+        const diff = startX - currentX;
+        const swipeThreshold = 50; // Mínimo desplazamiento para considerar swipe
+        
+        console.log('Touch end, diferencia:', diff);
+        
+        // Determinar si fue un swipe significativo
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swipe izquierda - siguiente
+                move("next");
+            } else {
+                // Swipe derecha - anterior
+                move("prev");
+            }
+        } else {
+            // Si no fue un swipe, ajustar al slide más cercano
+            snapToNearestSlide();
+        }
+        
+        e.preventDefault();
+    }
+
+    function handleTouchCancel() {
+        isTouching = false;
+        snapToNearestSlide();
+    }
+
+    /* ============================================================
+     5. FUNCIONES DE MOVIMIENTO
+     ============================================================ */
+    function move(direction) {
+        if (isMoving) return;
+        
+        const dimensions = calculateDimensions();
+        if (!dimensions) return;
+        
+        const totalCards = cards.length;
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        
+        let newIndex = currentIndex;
+        
+        if (direction === "next") {
+            newIndex = Math.min(currentIndex + 1, maxIndex);
+        } else if (direction === "prev") {
+            newIndex = Math.max(currentIndex - 1, 0);
+        }
+        
+        // Solo mover si hay cambio
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            scrollToIndex(currentIndex);
+        }
+    }
+
+    function scrollToIndex(index) {
+        if (isMoving) return;
+        
+        isMoving = true;
+        const targetPosition = index * scrollSize;
+        
+        console.log('Moviendo a índice:', index, 'posición:', targetPosition);
+        
+        // Usar scroll suave para la animación
+        carousel.scrollTo({
+            left: targetPosition,
+            behavior: 'smooth'
+        });
+        
+        // Actualizar estado después de la animación
+        setTimeout(() => {
+            isMoving = false;
+            updateButtonStates();
+        }, 300);
+    }
+
+    function snapToNearestSlide() {
+        const currentScroll = carousel.scrollLeft;
+        const dimensions = calculateDimensions();
+        
+        if (!dimensions || scrollSize === 0) return;
+        
+        // Calcular slide más cercano
+        const newIndex = Math.round(currentScroll / scrollSize);
+        const totalCards = cards.length;
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        
+        // Asegurar que esté dentro de los límites
+        const clampedIndex = Math.max(0, Math.min(newIndex, maxIndex));
+        
+        if (clampedIndex !== currentIndex) {
+            currentIndex = clampedIndex;
+            scrollToIndex(currentIndex);
+        } else {
+            // Ajustar a posición exacta
+            carousel.scrollTo({
+                left: currentIndex * scrollSize,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    /* ============================================================
+     6. ACTUALIZACIÓN DEL ESTADO DE BOTONES
+     ============================================================ */
+    function updateButtonStates() {
+        const dimensions = calculateDimensions();
+        if (!dimensions) return;
+        
+        const totalCards = cards.length;
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        
+        // Ocultar botones en móviles pequeños
+        if (window.innerWidth <= 576) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            return;
+        } else {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        }
+        
+        // Botón "anterior"
+        if (currentIndex === 0) {
+            prevBtn.disabled = true;
+            prevBtn.style.opacity = "0.5";
+            prevBtn.style.cursor = "not-allowed";
+            prevBtn.setAttribute('aria-disabled', 'true');
+        } else {
+            prevBtn.disabled = false;
+            prevBtn.style.opacity = "1";
+            prevBtn.style.cursor = "pointer";
+            prevBtn.setAttribute('aria-disabled', 'false');
+        }
+        
+        // Botón "siguiente"
+        if (currentIndex >= maxIndex) {
+            nextBtn.disabled = true;
+            nextBtn.style.opacity = "0.5";
+            nextBtn.style.cursor = "not-allowed";
+            nextBtn.setAttribute('aria-disabled', 'true');
+        } else {
+            nextBtn.disabled = false;
+            nextBtn.style.opacity = "1";
+            nextBtn.style.cursor = "pointer";
+            nextBtn.setAttribute('aria-disabled', 'false');
+        }
+    }
+
+    /* ============================================================
+     7. DETECCIÓN DE SCROLL MANUAL
+     ============================================================ */
+    carousel.addEventListener("scroll", () => {
+        if (isMoving || isTouching) return;
+        
+        const currentScroll = carousel.scrollLeft;
+        const dimensions = calculateDimensions();
+        
+        if (!dimensions || scrollSize === 0) return;
+        
+        const newIndex = Math.round(currentScroll / scrollSize);
+        const totalCards = cards.length;
+        const maxIndex = Math.max(0, totalCards - cardsPerView);
+        
+        // Solo actualizar si es un cambio válido
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex <= maxIndex) {
+            currentIndex = newIndex;
+            updateButtonStates();
+        }
+    });
+
+    /* ============================================================
+     8. EVENT LISTENERS PARA BOTONES
+     ============================================================ */
+    prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!prevBtn.disabled && !isMoving) {
+            move("prev");
+        }
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!nextBtn.disabled && !isMoving) {
+            move("next");
+        }
+    });
+
+    /* ============================================================
+     9. NAVEGACIÓN CON TECLADO
+     ============================================================ */
+    document.addEventListener('keydown', (e) => {
+        // Solo activar si no hay un input activo
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            move("prev");
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            move("next");
+        }
+    });
+
+    /* ============================================================
+     10. MEJORAS PARA BOTONES "VER MÁS" EN TÁCTIL
+     ============================================================ */
+    cards.forEach((card, index) => {
+        const readMoreBtn = card.querySelector('.read-more-btn');
+        
+        if (readMoreBtn) {
+            // Prevenir que el toque en la tarjeta active el enlace
+            card.addEventListener('touchstart', (e) => {
+                // Solo prevenir si no se está tocando el botón directamente
+                if (!e.target.closest('.read-more-btn')) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+            
+            // Mejor feedback táctil para el botón
+            readMoreBtn.addEventListener('touchstart', () => {
+                readMoreBtn.style.transform = 'translate(-50%, -50%) scale(0.95)';
+            });
+            
+            readMoreBtn.addEventListener('touchend', () => {
+                readMoreBtn.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        }
+        
+        // Mejorar accesibilidad
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const link = card.querySelector('.read-more-btn');
+                if (link) {
+                    window.open(link.href, '_blank');
+                }
+            }
+        });
+    });
+
+    /* ============================================================
+     11. MANEJO DE REDIMENSIONAMIENTO
+     ============================================================ */
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            console.log('Redimensionando, recalculando...');
+            initCarousel();
+        }, 250);
+    });
+
+    /* ============================================================
+     12. INICIALIZACIÓN
+     ============================================================ */
+    // Esperar a que todo cargue
+    window.addEventListener('load', () => {
+        console.log('Página cargada, inicializando carrusel...');
+        initCarousel();
+    });
+    
+    // Inicializar también después de un breve delay
+    setTimeout(initCarousel, 100);
+    
+    // Debug: Log inicial
+    console.log('Script de carrusel cargado. Touch device:', isTouchDevice);
+});
+</script>
+{% endblock %}

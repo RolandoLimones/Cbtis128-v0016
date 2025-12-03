@@ -1,0 +1,300 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- CARGAR CSS (RUTA CORRECTA) -->
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<div class="main-index"> 
+  <!--FACEBOOK-->
+  <div class="inicio-facebook">
+    <div class="bienvenido-container">
+      <h2>BIENVENIDO</h2>
+      <p class="mensaje-bienvenida" class="texto-normal">
+        Te damos la más cordial bienvenida a nuestra institución educativa. 
+        En el CBTIS 128 nos dedicamos a formar profesionales técnicos con los 
+        más altos estándares de calidad educativa, preparando a nuestros estudiantes 
+        para los desafíos del mundo actual. Nuestro compromiso es brindar una educación 
+        integral que combine conocimientos académicos sólidos con habilidades técnicas 
+        especializadas, fomentando valores éticos y ciudadanos responsables.
+      </p>
+    </div>  
+    <div class="facebook-box">
+      <h2 class="box-title">FACEBOOK OFICIAL</h2>
+      <div class="fb-page" 
+          data-href="https://www.facebook.com/profile.php?id=100075762974946" 
+          data-tabs="timeline" 
+          data-width="500" 
+          data-height="700" 
+          data-small-header="false" 
+          data-adapt-container-width="true" 
+          data-hide-cover="false" 
+          data-show-facepile="true">
+      </div>
+    </div>
+  </div>
+
+  <!--CONOCENOS-->   
+  <div class="inicio-conocenos">
+    <h2 class="box-title">CONOCENOS</h2>
+    <div class="box-conocenos">
+      
+      <h2 style="text-align: center;">Misión</h2>
+      <img src="{% static 'imagenes/mision.jpeg' %}" alt="Política imagen" class="logo-conocenos"> 
+      <p class="conocenos-p" class="texto-normal" style="width:60rem;">
+        Ser el medio fundamental para Adquirir, Transmitir y Acreditar la Cultura Tecnológica, 
+        formando Bachilleres Técnicos con un alto Nivel Académico y Tecnológico, preparados 
+        para responder a las necesidades del Desarrollo Estatal, a la preservación de nuestros 
+        recursos naturales, a la producción, y el desarrollo de bienes y servicios, 
+        en una estrecha Vinculación con el Sector Productivo, Educativo, Gubernamental y Social.
+      </p>
+    </div> 
+
+    <div class="box-conocenos">
+      <h2 style="text-align: center;">Visión</h2>
+      <img src="{% static 'imagenes/vision.jpeg' %}" alt="Vision imagen" class="logo-conocenos"> 
+      <p class="conocenos-p" class="texto-normal" style="width:60rem;">
+        Ser un sistema Educativo de Excelencia, en los ámbitos Académicos, Tecnológicos y de Investigación, que satisfaga ampliamente
+        los requerimientos de Recursos Humanos del Sector Productivo y de la Sociedad en el Estado de Chihuahua.
+        <br>
+        <br>
+        Impulsamos un modelo educativo innovador que responda a los retos del futuro, integrando sostenibilidad y 
+        tecnología para transformar positivamente la realidad de nuestra comunidad.
+      </p>
+    </div>
+
+    <div class="box-conocenos">
+      <h2 style="text-align: center;">Objetivo de la calidad</h2>
+      <img src= "{% static "imagenes/objetivo_calidad.jpeg" %}" alt="Objetivo imagen" class="logo-conocenos"> 
+      <p class="conocenos-p" class="texto-normal" style="width:60rem;">
+        Satisfacer las necesidades y expectativas de la Sociedad en Educación Media Superior Tecnológica, 
+        a través de la formación de Bachilleres y Técnicos Profesionales que fortalezcan y desarrollen 
+        una Cultura Tecnológica y una Infraestructura Industrial y de Servicios con enfoque hacia la calidad.
+        <br>
+        <br>
+        Promovemos la mejora continua en todos nuestros procesos formativos, garantizando que nuestros egresados 
+        contribuyan al crecimiento económico y al bienestar social con responsabilidad y ética.
+      </p>
+    </div>
+    
+    <div class="box-conocenos">
+      <h2 style="text-align: center;">Política de calidad</h2>
+      <img src="{% static 'imagenes/politica_calidad.jpeg' %}" alt="Política imagen" class="logo-conocenos"> 
+      <p class="conocenos-p" class="texto-normal" style="width:60rem;">
+        Formar y Desarrollar Integralmente a los Educandos del Sistema de Educación Tecnológica 
+        Industrial, en donde se manifieste el Avance y Desarrollo Tecnológico, la Experiencia del Personal 
+        Docente, Técnico, Administrativo y Directivo, reforzando los valores que los motiven a la calidad
+        creatividad y la mejora continua en los procesos institucionales para la satisfacción de nuestros clientes.
+        <br>
+        <br>
+        Fomentamos un ambiente de respeto, responsabilidad y trabajo colaborativo, fundamentado en una ética sólida 
+        que guíe su desempeño profesional y personal, asegurando que la formación recibida esté alineada con las
+        demandas reales del mercado laboral.
+      </p>
+    </div>
+  </div>
+
+  <!--CODIGO DE ETICA - SECCIÓN SEPARADA-->
+  <div class="inicio-etica">
+    <div class="content-etica"> 
+      <h2 class="box-title">CÓDIGO DE ÉTICA</h2>
+      <ul class="codigo-lista" class="texto-normal">
+        <li>No usar el cargo en la Institución para ganancia personal.</li>
+        <li>Actuar siempre en forma Imparcial y en Estricta observancia de la norma.</li>
+        <li>Garantizar el acceso a la Información de la Gestión Académica y Administrativa.</li>
+        <li>Atender con Eficacia y Calidad la Optimización de los Recursos y la Rendición de Cuentas.</li>
+        <li>Respetar y Defender la Preservación del Entorno Cultural y Ecológico de la Institución</li>
+        <li>Atender a todos los miembros de la Institución y a la Comunidad con Generosidad, Sensibilidad, Solidaridad e Igualdad</li>
+      </ul>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!--MENSAJE DEL DIRECTOR - SECCIÓN SEPARADA-->
+  <div class="inicio-mensaje">
+    <div class="content-mensaje"> 
+      <h2 class="box-title">MENSAJE DEL DIRECTOR</h2>
+      <h3>Señores padres de familia:</h3>
+      <div class="mensaje-contenido">
+        <p class="texto-normal">
+          Con su apoyo y esfuerzo, a lo largo de estos años sus hijos han logrado terminar la educación básica y están por comenzar
+          una nueva etapa. Ahora cursarán la Educación Media Superior, donde de manera especial necesitarán que ustedes los acompañen 
+          y motiven a seguir adelante. Esta nueva fase les proporcionará conocimientos, capacidades, actitudes y valores que les 
+          servirán para desarrollarse como personas y como ciudadanos, además de prepararlos tanto para ingresar a la educación superior 
+          como para incorporarse a la actividad productiva en mejores condiciones. El ingreso a la Educación Media Superior representa un 
+          desafío para sus hijos, pues enfrentarán un sistema académico diferente al de la secundaria, a la vez que seguirán experimentando 
+          los cambios físicos, psicológicos y sociales de su adolescencia. Para muchos jóvenes, asimilar de manera simultánea todas estas 
+          modificaciones es muy difícil y puede llevarlos a cometer el grave error de abandonar la escuela. Actualmente, sólo 60 de cada 
+          100 estudiantes que ingresan a la Educación Media Superior logra terminar sus estudios. Para que los jóvenes enfrenten con éxito 
+          los retos de esta etapa, es sumamente importante el apoyo de los padres. Es necesario que ustedes sigan de cerca su avance en la 
+          escuela: que se aseguren de que sus hijos asistan a clases, tengan un buen desempeño académico y muestren un comportamiento apropiado. 
+          También es muy importante prestar atención a lo que les sucede fuera de los horarios de clase: a qué dedican su tiempo libre; quiénes 
+          son sus amistades y si están realizando actividades deseables para su formación como los deportes o actividades artísticas. La intención 
+          de estar al tanto de sus hijos, es guiarlos, además de prevenir y actuar ante situaciones de riesgo que los puedan llevar a abandonar 
+          sus estudios. Usted no está solo en esta tarea y cuenta con el apoyo de la escuela para asegurar que sus hijos concluyan la Educación 
+          Media Superior. El Gobierno Federal y los Gobiernos Estatales han puesto en marcha el Movimiento Nacional para Combatir el Abandono 
+          Escolar, que ofrece apoyo e información a escuelas, estudiantes y padres de familia para prevenir situaciones de riesgo, detectarlas a 
+          tiempo y reaccionar para evitar que los jóvenes dejen la escuela. La escuela cuenta con diversos materiales sobre el tema y realizará 
+          actividades para apoyar a sus hijos y a usted en la meta de lograr que todos los jóvenes concluyan sus estudios. Hagamos todos que ésta 
+          sea nuestra tarea más importante. Atentamente: La Dirección del Plantel
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!--HISTORIA--> 
+  <div class="inicio-historia">
+    <h2 class="box-title-history">HISTORIA DEL CBTIS 128</h2>
+    <div class="pdf-container">
+      <div class="pdf-wrapper">
+        <canvas id="pdfCanvas"></canvas>
+
+        <!-- FLECHAS SOBRE LA IMAGEN (con círculo negro) -->
+        <button id="prevPageOverlay" class="nav-arrow left-arrow" title="Página anterior">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        <button id="nextPageOverlay" class="nav-arrow right-arrow" title="Página siguiente">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- INDICADOR DE PÁGINA + PUNTOS -->
+      <div class="pdf-nav">
+        <div id="pageIndicator" class="page-indicator">Página 1 de 1</div>
+        <div class="pdf-dots"></div>
+      </div>
+
+      <!-- MENSAJE DE CARGA -->
+      <div id="pdfLoading" class="pdf-loading">
+        Cargando documento...
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PDF.js + JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+// Añadir este script al final del body para las animaciones
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observar elementos que deben animarse
+    const animatedElements = document.querySelectorAll('.box-conocenos, .content-mensaje, .content-etica');
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  let pdfDoc = null;
+  let currentPage = 1;
+  let scale = 1.5;
+  const canvas = document.getElementById('pdfCanvas');
+  const ctx = canvas.getContext('2d');
+  const prevOverlay = document.getElementById('prevPageOverlay');
+  const nextOverlay = document.getElementById('nextPageOverlay');
+  const pdfWrapper = document.querySelector('.pdf-wrapper');
+  const pdfDotsContainer = document.querySelector('.pdf-dots');
+  const pageIndicator = document.getElementById('pageIndicator');
+  const pdfLoadingElem = document.getElementById('pdfLoading');
+
+  const pdfPath = '{% static "imagenes/historia.pdf" %}';
+
+  function createDots() {
+    if (!pdfDoc) return;
+    pdfDotsContainer.innerHTML = '';
+    for (let i = 1; i <= pdfDoc.numPages; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'pdf-dot';
+      if (i === currentPage) dot.classList.add('active');
+      pdfDotsContainer.appendChild(dot);
+    }
+    updatePageIndicator();
+  }
+
+  function updateDots() {
+    const dots = document.querySelectorAll('.pdf-dot');
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === currentPage);
+    });
+    updatePageIndicator();
+  }
+
+  function updatePageIndicator() {
+    if (pdfDoc) {
+      pageIndicator.textContent = `Página ${currentPage} de ${pdfDoc.numPages}`;
+    }
+  }
+
+  function updateArrows() {
+    if (!pdfDoc) return;
+    prevOverlay.style.display = currentPage > 1 ? 'flex' : 'none';
+    nextOverlay.style.display = currentPage < pdfDoc.numPages ? 'flex' : 'none';
+  }
+
+  function renderPage(num) {
+    pdfWrapper.classList.add('loading');
+    pdfDoc.getPage(num).then(page => {
+      const viewport = page.getViewport({ scale });
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      page.render({ canvasContext: ctx, viewport }).promise.then(() => {
+        currentPage = num;
+        updateDots();
+        updateArrows();
+        setTimeout(() => pdfWrapper.classList.remove('loading'), 100);
+      });
+    });
+  }
+
+  function loadPDF(url) {
+    pdfLoadingElem.style.display = 'block';
+    pdfjsLib.getDocument(url).promise.then(pdf => {
+      pdfDoc = pdf;
+      createDots();
+      renderPage(1);
+      pdfLoadingElem.style.display = 'none';
+    }).catch(err => {
+      pdfLoadingElem.innerHTML = `
+        <div class="pdf-error">
+          <p><strong>Error:</strong> ${err.message}</p>
+          <p>Archivo: <code>static/imagenes/historia.pdf</code></p>
+        </div>
+      `;
+    });
+  }
+
+  prevOverlay.onclick = () => { if (currentPage > 1) renderPage(currentPage - 1); };
+  nextOverlay.onclick = () => { if (currentPage < pdfDoc?.numPages) renderPage(currentPage + 1); };
+
+  document.onkeydown = e => {
+    if (e.key === 'ArrowLeft' && currentPage > 1) renderPage(currentPage - 1);
+    if (e.key === 'ArrowRight' && currentPage < pdfDoc?.numPages) renderPage(currentPage + 1);
+  };
+
+  document.addEventListener('DOMContentLoaded', () => loadPDF(pdfPath));
+</script>
+
+{% endblock %}

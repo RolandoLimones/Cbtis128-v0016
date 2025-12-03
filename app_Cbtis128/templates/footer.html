@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo logo-dgeti">
+            <img src="{% static 'imagenes/logo-dgeti.jpg' %}" alt="Logo DGETI">
+        </div>
+        
+        <div class="footer-col">
+            <h3>Aviso de Privacidad</h3>
+            <p>
+                Aviso de Privacidad Integral Planteles<br>
+                Aviso de Privacidad Simplificado Planteles<br>
+                Política pública para la educación media superior
+            </p>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Información de Contacto</h3>
+            <p>
+                CBTIS 128, Nueva Zelanda, Oasis<br>
+                656-619-1934<br>
+                656-619-1570<br>
+                informacion@cbtis128.edu.mx
+            </p>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Agradecimientos</h3>
+            <p>
+                M.E.E Leticia Meza Díaz<br>
+                Rolando Contreras Limones<br>
+                Andrea Montoya Hernández<br>
+                Victor Manuel Muñiz Salinas<br>
+                Nicolas Rios Perales<br>
+                Jazmin Valtierra Anaya
+            </p>
+        </div>
+        
+        <div class="footer-logo logo-sep">
+            <img src="{% static 'imagenes/logo-sep.png' %}" alt="Logo SEP">
+        </div>
+    </div>
+    <div class="copyright">Copyright &copy; {% now "Y" %} - CBTIS 128 - Todos los derechos reservados</div>
+</footer>
